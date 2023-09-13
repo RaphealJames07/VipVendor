@@ -14,6 +14,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "antd": "^5.9.0",
     "axios": "^1.5.0",
+    "icons": "^1.0.0",
     "react": "^18.2.0",
     "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
