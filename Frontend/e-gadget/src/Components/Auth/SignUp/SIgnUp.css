@@ -1,0 +1,402 @@
+/* 
+/* TEMPLATE FOR STYLINGS */
+
+/* Media Query Styling For Desktop Device */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.SignUpBody {
+  width: 100%;
+  height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  font-family: Verdana;
+}
+
+.SignUpWrap {
+  width: 90%;
+  height: 100%;
+}
+
+.SignUpLogoDiv {
+  width: 100%;
+  height: 8%;
+}
+.SignUpLogoDiv img{
+  width: 15%;
+  height: 100%;
+}
+
+.SignUpContentDiv {
+  width: 100%;
+  height: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SignUpContentDivWrap{
+  width: 35%;
+  height: 95%;
+  background: #f5f5f5;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.SignUpContentTop{
+  width: 85%;
+  height: 9%;
+  background: #d2d6e0;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+  border-radius: 3px;
+}
+
+.SignUpContentTop1{
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3F51B5;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+}
+.SignUpContentTop2{
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #d2d6e0;
+  cursor: pointer;
+  font-size: 14px;
+  color: #3F51B5;
+}
+
+.SignUpContentDown{
+  width: 100%;
+  height: 89%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 7px;
+  padding: 0 20px;
+  padding-top: 17px;
+  padding-bottom: 0;
+  margin-top: 10px;
+}
+
+.SignUpContentDownInitials{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.SignUpContentDownInitials h1{
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.SignUpContentDownForm{
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.SignUpContentDownFormNames{
+  width: 100%;
+  height: 18%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.SignUpContentDownFormFName{
+  width: 48%;
+  height: 100%;
+}
+
+.SignUpContentDownFormFNameLabels{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SignUpContentDownFormFNameLabels p{
+  font-size: 12px;
+  color: red;
+}
+
+.SignUpContentDownFormFNameInputs{
+  width: 100%;
+  height: 50%;
+}
+.SignUpContentDownFormFNameInputs input{
+  width: 100%;
+  height: 100%;
+  padding-left: 7px;
+  border: 2px solid #3F51B5;
+  border-radius: 5px;
+}
+
+.SignUpContentDownFormFNameInputs{
+  width: 100%;
+  height: 50%;
+}
+
+.SignUpContentDownFormLName{
+  width: 48%;
+  height: 100%;
+}
+
+.SignUpContentDownFormLNameLabels{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.SignUpContentDownFormLNameLabels p{
+  font-size: 12px;
+  color: red;
+}
+
+.SignUpContentDownFormLNameInputs{
+  width: 100%;
+  height: 50%;
+}
+.SignUpContentDownFormLNameInputs input{
+  width: 100%;
+  height: 100%;
+  padding-left: 7px;
+  border: 2px solid #3F51B5;
+  border-radius: 5px; 
+}
+
+.SignUpContentDownFormMail{
+  width: 100%;
+  height: 18%;
+}
+
+.SignUpContentDownFormMailLabels{
+  display: flex;
+  width: 100%;
+  height: 50%;
+  align-items: center;
+  justify-content: space-between;
+}
+.SignUpContentDownFormMailLabels p{
+  font-size: 12px;
+  color: red;
+}
+
+.SignUpContentDownFormMailInputs{
+  width: 100%;
+  height: 50%;
+}
+
+.SignUpContentDownFormMailInputs input{
+  width: 100%;
+  height: 100%;
+  border: 2px solid #3F51B5;
+  border-radius: 5px;
+}
+
+.SignUpContentDownFormPhone{
+  width: 100%;
+  height: 18%;
+}
+.SignUpContentDownFormPhoneLabels{
+  display: flex;
+  width: 100%;
+  height: 50%;
+  align-items: center;
+  justify-content: space-between;
+}
+.SignUpContentDownFormPhoneLabels p{
+  font-size: 12px;
+  color: red;
+}
+
+.SignUpContentDownFormPhoneInputs{
+  width: 100%;
+  height: 50%;
+}
+.SignUpContentDownFormPhoneInputs input{
+  width: 100%;
+  height: 100%;
+  border: 2px solid #3F51B5;
+  border-radius: 5px;
+}
+
+.SignUpContentDownFormPwd{
+  width: 100%;
+  height: 18%;
+}
+
+.SignUpContentDownFormPwdLabels{
+  display: flex;
+  width: 100%;
+  height: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+.SignUpContentDownFormPwdLabels p{
+  font-size: 12px;
+  color: red;
+}
+
+.SignUpContentDownFormPwdInputs{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  border: 2px solid #3F51B5;
+  border-radius: 5px;
+}
+.SignUpContentDownFormPwdInputs input{
+  width: 90%;
+  height: 100%;
+  border: none;
+}
+
+.SignUpContentDownFormPwdEyes{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SignUpContentDownFormPwdEyes .AiOutlineEye{
+  width: 80%;
+  height: 80%;
+  cursor: pointer;
+}
+.SignUpContentDownFormPwdEyes .AiOutlineEyeInvisible{
+  width: 80%;
+  height: 80%;
+  cursor: pointer;
+}
+
+.SignUpContentDownFormCPwd{
+  width: 100%;
+  height: 18%;
+}
+
+.SignUpContentDownFormCPwdlabels{
+  display: flex;
+  width: 100%;
+  height: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+.SignUpContentDownFormCPwdlabels p{
+  font-size: 12px;
+  color: red;
+}
+
+.SignUpContentDownFormcPwdInputs{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  border: 2px solid #3F51B5;
+  border-radius: 5px;
+}
+.SignUpContentDownFormcPwdInputs input{
+  width: 90%;
+  height: 100%;
+  border: none;
+}
+
+.SignUpContentDownFormCPwdEyes{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SignUpContentDownFormCPwdEyes .AiOutlineEyeInvisible{
+  width: 80%;
+  height: 80%;
+  cursor: pointer;
+}
+.SignUpContentDownFormCPwdEyes .AiOutlineEye{
+  width: 80%;
+  height: 80%;
+  cursor: pointer;
+}
+
+input{
+  padding-left: 10px;
+}
+
+.SignUpContentDownBtn{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SignUpContentDownBtn button{
+  width: 100%;
+  height: 80%;
+  cursor: pointer;
+  background: #3F51B5;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+}
+
+/* End of Media Query Styling For Desktop Device */
+
+/* Media Query Styling for Tablet Device */
+
+@media only screen and (max-width: 1024px) {
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+}
+
+/* End of Media Query Styling for Tablet Device */
+
+/* Media Query Styling for Mobile Device */
+
+@media only screen and (max-width: 430px) {
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+}
+
+/* End of Media Query Styling for Mobile Device */
