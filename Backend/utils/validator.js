@@ -4,24 +4,20 @@ const validationSignUp = (req, res, next) => {
     // Define the validation schema using Joi
     const schema = Joi.object({
         firstName: Joi.string()
-            .pattern(/^[A-Za-z]+$/)
-            .min(2)
+            .pattern(/^\s*[A-Za-z]+\s*$/)
             .required()
             .messages({
                 "any.required": "Please provide your first name.",
                 "string.empty": "First name cannot be left empty.",
-                "string.pattern.base": "First name should only contain letters.",
-                "string.min": "First name should be at least 2 characters long.",
+                "string.pattern.base": "First name should only contain letters and no space in between.",
             }),
         lastName: Joi.string()
-            .pattern(/^[A-Za-z]+$/)
-            .min(2)
+            .pattern(/^\s*[A-Za-z]+\s*$/)
             .required()
             .messages({
                 "any.required": "Please provide your last name.",
                 "string.empty": "Last name cannot be left empty.",
                 "string.pattern.base": "Last name should only contain letters.",
-                "string.min": "Last name should be at least 2 characters long.",
             }),
         email: Joi.string().email().required().messages({
             "any.required": "Please provide your email address.",
@@ -38,13 +34,13 @@ const validationSignUp = (req, res, next) => {
                 "string.pattern.base": "Phone number should contain only numeric digits.",
             }),
         password: Joi.string()
-            .pattern(new RegExp("^(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$"))
+            .pattern(new RegExp("^(?=.*[!@#$%^&*])(?=.*[A-Z]).{7,}$"))
             .required()
             .messages({
                 "any.required": "Please provide a password.",
                 "string.empty": "Password cannot be left empty.",
                 "string.pattern.base":
-                    "Password must be at least 8 characters long and include at least one uppercase letter and one special character (!@#$%^&*).",
+                    "Password must be at least 7 characters long and include at least one uppercase letter and one special character (!@#$%^&*).",
             }),
         confirmPassword: Joi.string()
             .valid(Joi.ref("password"))
@@ -62,7 +58,7 @@ const validationSignUp = (req, res, next) => {
     // If there's a validation error, return a response with the error details
     if (error) {
         const errorMessage = error.details.map((err) => err.message).join(" ");
-        return res.status(400).json({ error: errorMessage });
+        return res.status(400).json({ message: errorMessage });
     }
 
     // If validation is successful, move to the next middleware
@@ -75,20 +71,16 @@ const validationUpdate = (req, res, next) => {
     // Define the validation schema using Joi
     const schema = Joi.object({
         firstName: Joi.string()
-            .pattern(/^[A-Za-z]+$/)
-            .min(2)
+            .pattern(/^\s*[A-Za-z]+\s*$/)
             .messages({
                 "string.empty": "First name cannot be left empty.",
                 "string.pattern.base": "First name should only contain letters.",
-                "string.min": "First name should be at least 2 characters long.",
             }),
         lastName: Joi.string()
-            .pattern(/^[A-Za-z]+$/)
-            .min(2)
+            .pattern(/^\s*[A-Za-z]+\s*$/)
             .messages({
                 "string.empty": "Last name cannot be left empty.",
                 "string.pattern.base": "Last name should only contain letters.",
-                "string.min": "Last name should be at least 2 characters long.",
             }),
         email: Joi.string().email().messages({
             "string.empty": "Email address cannot be left empty.",
@@ -102,11 +94,11 @@ const validationUpdate = (req, res, next) => {
                 "string.pattern.base": "Phone number should contain only numeric digits.",
             }),
         newPassword: Joi.string()
-            .pattern(new RegExp("^(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$"))
+            .pattern(new RegExp("^(?=.*[!@#$%^&*])(?=.*[A-Z]).{7,}$"))
             .messages({
                 "string.empty": "New password cannot be left empty.",
                 "string.pattern.base":
-                    "New password must be at least 8 characters long and include at least one uppercase letter and one special character (!@#$%^&*).",
+                    "New password must be at least 7 characters long and include at least one uppercase letter and one special character (!@#$%^&*).",
             }),
     });
 
@@ -116,7 +108,7 @@ const validationUpdate = (req, res, next) => {
     // If there's a validation error, return a response with the error details
     if (error) {
         const errorMessage = error.details.map((err) => err.message).join(" ");
-        return res.status(400).json({ error: errorMessage });
+        return res.status(400).json({ message: errorMessage });
     }
 
     // If validation is successful, move to the next middleware
@@ -129,22 +121,22 @@ const validationPassword = (req, res, next) => {
     // Define the validation schema using Joi
     const schema = Joi.object({
         newPassword: Joi.string()
-            .pattern(new RegExp("^(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$"))
+            .pattern(new RegExp("^(?=.*[!@#$%^&*])(?=.*[A-Z]).{7,}$"))
             .required()
             .messages({
                 "any.required": "Please provide new password.",
                 "string.empty": "New password cannot be left empty.",
                 "string.pattern.base":
-                    "New password must be at least 8 characters long and include at least one uppercase letter and one special character (!@#$%^&*).",
+                    "New password must be at least 7 characters long and include at least one uppercase letter and one special character (!@#$%^&*).",
             }),
         existingPassword: Joi.string()
-            .pattern(new RegExp("^(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$"))
+            .pattern(new RegExp("^(?=.*[!@#$%^&*])(?=.*[A-Z]).{7,}$"))
             .required()
             .messages({
                 "any.required": "Please provide Existing password.",
                 "string.empty": "Existing password cannot be left empty.",
                 "string.pattern.base":
-                    "Existing password must be at least 8 characters long and include at least one uppercase letter and one special character (!@#$%^&*).",
+                    "Existing password must be at least 7 characters long and include at least one uppercase letter and one special character (!@#$%^&*).",
             }),
     });
 
@@ -154,7 +146,7 @@ const validationPassword = (req, res, next) => {
     // If there's a validation error, return a response with the error details
     if (error) {
         const errorMessage = error.details.map((err) => err.message).join(" ");
-        return res.status(400).json({ error: errorMessage });
+        return res.status(400).json({ message: errorMessage });
     }
 
     // If validation is successful, move to the next middleware
