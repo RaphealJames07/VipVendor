@@ -52,6 +52,9 @@ const Login = () => {
                 <div className="LoginContentDownBtn">
                     <button>Create Account</button>
                 </div>
+                <div className="LoginForgetPwdDIv">
+                    <p>Forget Password?</p>
+                </div>
             </div>
         </>
     );

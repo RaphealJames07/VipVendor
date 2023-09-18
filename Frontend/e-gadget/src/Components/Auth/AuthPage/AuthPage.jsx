@@ -29,7 +29,7 @@ const AuthPage = () => {
                                 </div>
                                 <div className="AuthPageContentTop2" onClick={handleUiChange}>Login</div>
                             </div>
-                            {ui ? (
+                            {!ui ? (
                                 <>
                                     <SignUp />
                                 </>

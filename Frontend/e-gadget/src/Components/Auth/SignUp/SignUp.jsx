@@ -1,6 +1,14 @@
 import "./SIgnUp.css";
 import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+// import {Spin} from "antd";
+import {LoadingOutlined} from "@ant-design/icons";
+import axios from "axios";
+import Swal from "sweetalert2";
+import Flag from "../../../assets/flag.svg";
+import {useNavigate} from "react-router-dom";
+import {useDispatch} from 'react-redux'
+import {curveGadgetUserLogin} from '../../Redux/Features'
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -10,6 +18,156 @@ const SignUp = () => {
     const [showPasswordC, setShowPasswordC] = useState(false);
     const handleShowPasswordC = () => {
         setShowPasswordC(!showPasswordC);
+    };
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [errMsg, setErrMsg] = useState({
+        error: false,
+        type: "",
+        message: "",
+        multipleErr: "",
+    });
+    const [loading, setLoading] = useState(false);
+    const [inputErr, setInputErr] = useState(false);
+    const [backErr, setBackErr] = useState("");
+    // console.log(backErr);
+
+    const data = {
+        firstName,
+        lastName,
+        email,
+        password,
+        phoneNumber,
+        confirmPassword,
+    };
+    const url = " https://e-gadget.onrender.com/api/sign-up";
+    const nav = useNavigate()
+    const dispatch = useDispatch()
+
+    const HandleSignUp = (e) => {
+        console.log("Signing Up...");
+        e.preventDefault();
+        setErrMsg({error: false, type: "", message: "", multipleErr: ""});
+        if (!firstName) {
+            setErrMsg({
+                error: true,
+                type: "firstName",
+                message: "Enter Name",
+                multipleErr: "firstName",
+            });
+            setLoading(false);
+            setInputErr(false);
+        } else if (!lastName) {
+            setErrMsg({
+                error: true,
+                type: "lastName",
+                message: "Enter Name",
+                multipleErr: "lastName",
+            });
+            setLoading(false);
+            setInputErr(false);
+        } else if (!email) {
+            setErrMsg({
+                error: true,
+                type: "email",
+                message: "Input Email Address",
+                multipleErr: "email",
+            });
+            setLoading(false);
+            setInputErr(false);
+        } else if (!email.includes("@")) {
+            setErrMsg({
+                error: true,
+                type: "email@",
+                message: "email must include @",
+                multipleErr: "email",
+            });
+            setLoading(false);
+            setInputErr(false);
+        } else if (!phoneNumber) {
+            setErrMsg({
+                error: true,
+                type: "phoneNumber",
+                message: "Enter Phone Number",
+                multipleErr: "phone",
+            });
+            setLoading(false);
+            setInputErr(false);
+        } else if (phoneNumber.length < 11) {
+            setErrMsg({
+                error: true,
+                type: "phoneLength",
+                message: "Phone No Must be 11 digits",
+                multipleErr: "phone",
+            });
+            setLoading(false);
+            setInputErr(false);
+        } else if (!/^\d+$/.test(phoneNumber)) {
+            setErrMsg({
+                error: true,
+                type: "phoneAlpha",
+                message: "No Alphabets allowed",
+                multipleErr: "phone",
+            });
+            setLoading(false);
+            setInputErr(false);
+        } else if (password.length < 7) {
+            setErrMsg({
+                error: true,
+                type: "passwordSmall",
+                message: "must be 8 characters long",
+                multipleErr: "password",
+            });
+            setLoading(false);
+            setInputErr(false);
+        } else if (password !== confirmPassword) {
+            setErrMsg({
+                error: true,
+                type: "passwordMatch",
+                message: "password does not match",
+                multipleErr: "confirmPassword",
+            });
+            setLoading(false);
+            setInputErr(false);
+        } else {
+            setLoading(true);
+            setInputErr(true);
+            setErrMsg("");
+            axios
+                .post(url, data)
+                .then((res) => {
+                    console.log(res);
+                    setLoading(false);
+                    setInputErr(false);
+                    dispatch(curveGadgetUserLogin(res.data))
+                    Swal.fire({
+                        icon: 'success',
+                        title: "Success",
+                        text: 'Account Created Successfully',
+                    });
+                    nav('/Verify')
+                })
+                .catch((error) => {
+                    console.log(error);
+                    const errorMessage = error.response?.data?.message;
+                    setBackErr(errorMessage);
+                    setLoading(false);
+                    setInputErr(false);
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: errorMessage,
+                    });
+                });
+        }
+        useEffect(() => {
+            setBackErr();
+        }, []);
     };
 
     return (
@@ -24,24 +182,66 @@ const SignUp = () => {
                         <div className="SignUpContentDownFormFName">
                             <div className="SignUpContentDownFormFNameLabels">
                                 <label htmlFor="">First Name</label>
-                                <p>Input Your Name</p>
+                                {errMsg.type === "firstName" ? (
+                                    <p>{errMsg.message}</p>
+                                ) : null}
                             </div>
                             <div className="SignUpContentDownFormFNameInputs">
                                 <input
                                     type="text"
                                     placeholder="Input First Name"
+                                    value={firstName}
+                                    onChange={(e) => {
+                                        setFirstName(e.target.value);
+                                        if (
+                                            errMsg.multipleErr === "firstName"
+                                        ) {
+                                            setErrMsg((prevState) => ({
+                                                ...prevState,
+                                                error: false,
+                                                multipleErr: "",
+                                            }));
+                                        }
+                                    }}
+                                    style={{
+                                        border: `${
+                                            errMsg.multipleErr === "firstName"
+                                                ? "2px solid red"
+                                                : ""
+                                        }`,
+                                    }}
                                 />
                             </div>
                         </div>
                         <div className="SignUpContentDownFormLName">
                             <div className="SignUpContentDownFormLNameLabels">
                                 <label htmlFor="">Last Name</label>
-                                <p>Input Your Name</p>
+                                {errMsg.type === "lastName" ? (
+                                    <p>{errMsg.message}</p>
+                                ) : null}
                             </div>
                             <div className="SignUpContentDownFormLNameInputs">
                                 <input
                                     type="text"
                                     placeholder="Input Last Name"
+                                    value={lastName}
+                                    onChange={(e) => {
+                                        setLastName(e.target.value);
+                                        if (errMsg.multipleErr === "lastName") {
+                                            setErrMsg((prevState) => ({
+                                                ...prevState,
+                                                error: false,
+                                                multipleErr: "",
+                                            }));
+                                        }
+                                    }}
+                                    style={{
+                                        border: `${
+                                            errMsg.multipleErr === "lastName"
+                                                ? "2px solid red"
+                                                : null
+                                        }`,
+                                    }}
                                 />
                             </div>
                         </div>
@@ -49,30 +249,118 @@ const SignUp = () => {
                     <div className="SignUpContentDownFormMail">
                         <div className="SignUpContentDownFormMailLabels">
                             <label htmlFor="">Email Address</label>
-                            <p>Input Your Email</p>
+                            {errMsg.type === "email" ? (
+                                <p>{errMsg.message}</p>
+                            ) : null}
+                            {errMsg.type === "email@" ? (
+                                <p>{errMsg.message}</p>
+                            ) : null}
                         </div>
                         <div className="SignUpContentDownFormMailInputs">
-                            <input type='email' placeholder="Input Email" />
+                            <input
+                                type="text"
+                                placeholder="Input Email"
+                                value={email}
+                                onChange={(e) => {
+                                    setEmail(e.target.value);
+                                    if (errMsg.multipleErr === "email") {
+                                        setErrMsg((prevState) => ({
+                                            ...prevState,
+                                            error: false,
+                                            multipleErr: "",
+                                        }));
+                                    }
+                                }}
+                                style={{
+                                    border: `${
+                                        errMsg.multipleErr == "email"
+                                            ? "2px solid red"
+                                            : null
+                                    }`,
+                                }}
+                            />
                         </div>
                     </div>
                     <div className="SignUpContentDownFormPhone">
                         <div className="SignUpContentDownFormPhoneLabels">
                             <label htmlFor="">Phone Number</label>
-                            <p>Input Your Phone Number</p>
+                            {errMsg.type === "phoneNumber" ? (
+                                <p>{errMsg.message}</p>
+                            ) : null}
+
+                            {errMsg.type === "phoneAlpha" ? (
+                                <p>{errMsg.message}</p>
+                            ) : null}
+                            {errMsg.type === "phoneLength" ? (
+                                <p>{errMsg.message}</p>
+                            ) : null}
                         </div>
-                        <div className="SignUpContentDownFormPhoneInputs">
-                            <input type="tel" placeholder="Input Phone No" />
+                        <div
+                            className="SignUpContentDownFormPhoneInputs"
+                            style={{
+                                border: `${
+                                    errMsg.multipleErr == "phone"
+                                        ? "2px solid red"
+                                        : null
+                                }`,
+                            }}
+                        >
+                            <div className="SignUpContentDownFormPhoneFlag">
+                                <img src={Flag} alt="" /> <span>+234</span>
+                            </div>
+                            <input
+                                type="tel"
+                                placeholder="Input Number"
+                                value={phoneNumber}
+                                onChange={(e) => {
+                                    setPhoneNumber(e.target.value);
+                                    if (errMsg.multipleErr === "phone") {
+                                        setErrMsg((prevState) => ({
+                                            ...prevState,
+                                            error: false,
+                                            multipleErr: "",
+                                        }));
+                                    }
+                                }}
+                                maxLength={11}
+                            />
                         </div>
                     </div>
+                    <span style={{display: "none"}}>{backErr}</span>
                     <div className="SignUpContentDownFormPwd">
                         <div className="SignUpContentDownFormPwdLabels">
                             <label htmlFor="">Password</label>
-                            <p>Input Your Password</p>
+                            {errMsg.type === "password" ? (
+                                <p>{errMsg.message}</p>
+                            ) : null}
+                            {errMsg.type === "passwordSmall" ? (
+                                <p>Must be 7 characters or more</p>
+                            ) : null}
                         </div>
-                        <div className="SignUpContentDownFormPwdInputs">
+                        <div
+                            className="SignUpContentDownFormPwdInputs"
+                            style={{
+                                border: `${
+                                    errMsg.multipleErr === "password"
+                                        ? "2px solid red"
+                                        : null
+                                }`,
+                            }}
+                        >
                             <input
                                 type={!showPassword ? "password" : "text"}
                                 placeholder="Input Password"
+                                value={password}
+                                onChange={(e) => {
+                                    setPassword(e.target.value);
+                                    if (errMsg.multipleErr === "password") {
+                                        setErrMsg((prevState) => ({
+                                            ...prevState,
+                                            error: false,
+                                            multipleErr: "",
+                                        }));
+                                    }
+                                }}
                             />
                             <div
                                 className="SignUpContentDownFormPwdEyes"
@@ -89,12 +377,36 @@ const SignUp = () => {
                     <div className="SignUpContentDownFormCPwd">
                         <div className="SignUpContentDownFormCPwdlabels">
                             <label htmlFor="">Confirm Password</label>
-                            <p>Input Your Password</p>
+                            {errMsg.type === "confirmPassword" ? (
+                                <p>{errMsg.message}</p>
+                            ) : null}
                         </div>
-                        <div className="SignUpContentDownFormcPwdInputs">
+                        <div
+                            className="SignUpContentDownFormcPwdInputs"
+                            style={{
+                                border: `${
+                                    errMsg.multipleErr === "confirmPassword"
+                                        ? "2px solid red"
+                                        : null
+                                }`,
+                            }}
+                        >
                             <input
                                 type={!showPasswordC ? "password" : "text"}
                                 placeholder="Confirm Your Password"
+                                value={confirmPassword}
+                                onChange={(e) => {
+                                    setConfirmPassword(e.target.value);
+                                    if (
+                                        errMsg.multipleErr === "confirmPassword"
+                                    ) {
+                                        setErrMsg((prevState) => ({
+                                            ...prevState,
+                                            error: false,
+                                            multipleErr: "",
+                                        }));
+                                    }
+                                }}
                             />
                             <div
                                 className="SignUpContentDownFormCPwdEyes"
@@ -112,7 +424,21 @@ const SignUp = () => {
                     </div>
                 </div>
                 <div className="SignUpContentDownBtn">
-                    <button>Create Account</button>
+                    <button
+                        onClick={(e) => HandleSignUp(e)}
+                        disabled={loading || inputErr}
+                    >
+                        {loading ? (
+                            <LoadingOutlined
+                                style={{
+                                    fontSize: 24,
+                                }}
+                                spin
+                            />
+                        ) : (
+                            "Create Account"
+                        )}
+                    </button>
                 </div>
             </div>
         </>
