@@ -420,7 +420,9 @@ input{
   font-size: 17px;
   font-weight: 500;
   font-family: monospace;
+  border-radius: 3px;
 }
+
 
 /* End of Media Query Styling For Desktop Device */
 
