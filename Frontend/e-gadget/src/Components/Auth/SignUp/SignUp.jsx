@@ -1,7 +1,7 @@
 import "./SIgnUp.css";
 import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai";
 import {useEffect, useState} from "react";
-// import {Spin} from "antd";
+import { FcCheckmark } from 'react-icons/fc'
 import {LoadingOutlined} from "@ant-design/icons";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -12,6 +12,7 @@ import {curveGadgetUserLogin} from '../../Redux/Features'
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [process, setProcess] = useState(false)
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
     };
@@ -19,10 +20,15 @@ const SignUp = () => {
     const handleShowPasswordC = () => {
         setShowPasswordC(!showPasswordC);
     };
+    const[quanVal, setQuanVal] = useState()
+    const[uppCaseVal, setUppCaseVal] = useState()
+    const[lowCaseVal, setLowCaseVal] = useState()
+    const[numVal, setNumVal] = useState()
+    const[specCharVal, setSpecCharVal] = useState()
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -166,11 +172,53 @@ const SignUp = () => {
                     });
                 });
         }
+
+        
+
         useEffect(() => {
             setBackErr();
         }, []);
+
     };
 
+
+    useEffect(() => {
+        if(!/[A-Z]/.test(password)) {
+            console.log('Password must contain at least one uppercase letter');
+            setUppCaseVal(true)
+          }
+        
+          else if(!/[a-z]/.test(password)) {
+            console.log('Password must contain at least one lowercase letter');
+            setLowCaseVal(true)
+            
+          }
+    
+          else if(!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+            console.log('Password must contain at least one special character');
+            setSpecCharVal(true)
+            
+          }
+        
+          else if(!password.split('').some(char => '0123456789'.includes(char))) {
+            console.log('Password must contain at least one number');
+            setNumVal(true)
+            
+          }
+          else if(password.length < 8){
+              console.log("password must be more than 8 character");
+              setQuanVal(true)
+          }
+        
+           else{
+              setQuanVal(false)
+              setNumVal(false)
+              setSpecCharVal(false)
+              setLowCaseVal(false)
+              setUppCaseVal(false)
+           }
+}, [password]);
+    
     return (
         <>
             <div className="SignUpContentDown">
@@ -352,7 +400,12 @@ const SignUp = () => {
                                 type={!showPassword ? "password" : "text"}
                                 placeholder="Input Password"
                                 value={password}
+                                onFocus={()=>setProcess(true)}
+                                onBlur={()=>{
+                                    !password?setProcess(false):setProcess(true)
+                                }}
                                 onChange={(e) => {
+                                    // madValidation()
                                     setPassword(e.target.value);
                                     if (errMsg.multipleErr === "password") {
                                         setErrMsg((prevState) => ({
@@ -442,6 +495,32 @@ const SignUp = () => {
                     </button>
                 </div>
             </div>
+          {
+            process?
+            <div className="Validation_Process">
+            <div className="Validation_Head">
+                <span>Your Password must contain</span>
+            </div>
+            <div className="Validation_Body">
+                <div>
+                    <span style={{color:uppCaseVal?"red":uppCaseVal === false?"green":null}}>UpperCase(A-Z)</span>{uppCaseVal === false?<FcCheckmark />:null}
+                </div>
+                <div>
+                    <span style={{color:lowCaseVal?"red":lowCaseVal === false?"green":null}}>LowerCase(a-z)</span>{lowCaseVal === false?<FcCheckmark />:null}
+                </div>
+                <div>
+                    <span style={{color:specCharVal?"red":specCharVal === false?"green":null}}>Special Characters</span>{specCharVal === false?<FcCheckmark />:null}
+                </div>
+                <div>
+                    <span style={{color:numVal?"red":numVal === false?"green":null}}>Number(0-9)</span>{numVal === false?<FcCheckmark />:null}
+                </div>
+                <div>
+                    <span style={{color:quanVal?"red":quanVal === false?"green":null}}>8+ characters</span>{quanVal === false?<FcCheckmark />:null}
+                </div>
+            </div>
+
+        </div>:null
+          }
         </>
     );
 };

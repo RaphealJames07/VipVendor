@@ -394,6 +394,40 @@ input{
   cursor: not-allowed;
 }
 
+.Validation_Process {
+  width:300px;
+  height: 350px;
+  position: fixed;
+  right: 7%;
+  bottom: 10%;
+}
+
+.Validation_Head {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  /* justify-content: center; */
+  font-weight: bold;
+  color: rgb(0, 0, 0, 0.8);
+}
+
+.Validation_Body {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  padding-left: 12.5%;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Validation_Body span{
+  font-size: 17px;
+  font-weight: 500;
+  font-family: monospace;
+  border-radius: 3px;
+}
+
+
 /* End of Media Query Styling For Desktop Device */
 
 /* Media Query Styling for Tablet Device */
