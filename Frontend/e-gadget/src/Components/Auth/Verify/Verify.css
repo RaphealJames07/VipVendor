@@ -67,6 +67,21 @@
   cursor: pointer;
 }
 
+.VerifyContentCodeInputDiv{
+  width: 20%;
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+.VerifyContentCodeInputDiv input{
+  width: 20%;
+  outline: none;
+  border: none;
+  display: flex;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom: 2px solid #000;
+}
 
 /* End of Media Query Styling For Desktop Device */
 

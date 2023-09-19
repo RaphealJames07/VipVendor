@@ -148,7 +148,8 @@ const SignUp = () => {
                     Swal.fire({
                         icon: 'success',
                         title: "Success",
-                        text: 'Account Created Successfully',
+                        html: '<h3>Account Created Successfully</h3> <p>Sending verification code...</p>',
+                        timer: '7000'
                     });
                     nav('/Verify')
                 })
