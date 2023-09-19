@@ -389,6 +389,10 @@ input{
   border: none;
   color: #fff;
 }
+.SignUpContentDownBtn button:disabled{
+  background: #8593d7;
+  cursor: not-allowed;
+}
 
 .Validation_Process {
   width:300px;
