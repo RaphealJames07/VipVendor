@@ -7,8 +7,6 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import Flag from "../../../assets/flag.svg";
 import {useNavigate} from "react-router-dom";
-import {useDispatch} from 'react-redux'
-import {curveGadgetUserLogin} from '../../Redux/Features'
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -39,7 +37,7 @@ const SignUp = () => {
         multipleErr: "",
     });
     const [loading, setLoading] = useState(false);
-    const [inputErr, setInputErr] = useState(false);
+    const [inputErr, setInputErr] = useState(true);
     const [backErr, setBackErr] = useState("");
     // console.log(backErr);
 
@@ -51,9 +49,8 @@ const SignUp = () => {
         phoneNumber,
         confirmPassword,
     };
-    const url = " https://e-gadget.onrender.com/api/sign-up";
+    const url = "https://e-gadget.onrender.com/api/sign-up";
     const nav = useNavigate()
-    const dispatch = useDispatch()
 
     const HandleSignUp = (e) => {
         console.log("Signing Up...");
@@ -150,14 +147,14 @@ const SignUp = () => {
                     console.log(res);
                     setLoading(false);
                     setInputErr(false);
-                    dispatch(curveGadgetUserLogin(res.data))
                     Swal.fire({
                         icon: 'success',
                         title: "Success",
                         html: '<h3>Account Created Successfully</h3> <p>Sending verification code...</p>',
-                        timer: '7000'
+                        timer: '8000'
                     });
-                    nav('/Verify')
+                    const token = res.data.data.token
+                    nav(`/Verify/${token}`)
                 })
                 .catch((error) => {
                     console.log(error);
@@ -194,7 +191,7 @@ const SignUp = () => {
             
           }
     
-          else if(!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+          else if(!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(password)) {
             console.log('Password must contain at least one special character');
             setSpecCharVal(true)
             
@@ -221,7 +218,7 @@ const SignUp = () => {
     
     return (
         <>
-            <div className="SignUpContentDown">
+            <div className="SignUpContentDownWrap">
                 <div className="SignUpContentDownInitials">
                     <h1>Hello There</h1>
                     <p>Create an account to get started</p>
@@ -287,7 +284,7 @@ const SignUp = () => {
                                     style={{
                                         border: `${
                                             errMsg.multipleErr === "lastName"
-                                                ? "2px solid red"
+                                                ? "1px solid red"
                                                 : null
                                         }`,
                                     }}
@@ -451,6 +448,7 @@ const SignUp = () => {
                                 value={confirmPassword}
                                 onChange={(e) => {
                                     setConfirmPassword(e.target.value);
+                                    setInputErr(false)
                                     if (
                                         errMsg.multipleErr === "confirmPassword"
                                     ) {
