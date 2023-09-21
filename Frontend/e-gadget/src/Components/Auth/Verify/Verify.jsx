@@ -6,6 +6,7 @@ import {LoadingOutlined} from "@ant-design/icons";
 import axios from "axios";
 import Swal from "sweetalert2";
 import {  useNavigate, useParams } from "react-router";
+import { useLocation } from "react-router-dom";
 
 const Verify = () => {
     const nav = useNavigate()
@@ -129,6 +130,11 @@ const Verify = () => {
     const data = {otp}
     const url = `https://e-gadget.onrender.com/api/user/verify/${token}`;
 
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const email = searchParams.get("email");
+    console.log(email);
+
     const HandleVerify = (e) => {
         e.preventDefault();
         setLoading(true)
@@ -160,6 +166,17 @@ const Verify = () => {
         nav('/Auth')
     }
 
+    function hideEmail(email) {
+        const [username, domain] = email.split('@');
+        const hiddenUsername = username.slice(0, 2) + '*'.repeat(username.length - 2);
+        const maskedEmail = `${hiddenUsername}@${domain}`;
+        return maskedEmail;
+    }
+    
+    
+    const maskedEmail = hideEmail(email);
+    
+
     return (
         <>
             <div className="VerifyBody">
@@ -173,7 +190,7 @@ const Verify = () => {
                             <p>
                                 Protecting your account is our top priority,
                                 please verify your account by entering the
-                                authorization code sent to ra******07@gmail.com
+                                authorization code sent to {maskedEmail}
                             </p>
                             <div
                                 style={{display: "flex", fontSize: "30px"}}

@@ -63,6 +63,7 @@ const SignUp = () => {
                 message: "Enter Name",
                 multipleErr: "firstName",
             });
+            // setErrMsg('');
             setLoading(false);
             setInputErr(false);
         } else if (!lastName) {
@@ -154,7 +155,8 @@ const SignUp = () => {
                         timer: '8000'
                     });
                     const token = res.data.data.token
-                    nav(`/Verify/${token}`)
+                    const email = res.data.data.email
+                    nav(`/Verify/${token}?email=${email}`)
                 })
                 .catch((error) => {
                     console.log(error);
@@ -246,6 +248,7 @@ const SignUp = () => {
                                                 ...prevState,
                                                 error: false,
                                                 multipleErr: "",
+                                                type:''
                                             }));
                                         }
                                     }}
@@ -278,13 +281,14 @@ const SignUp = () => {
                                                 ...prevState,
                                                 error: false,
                                                 multipleErr: "",
+                                                type:'',
                                             }));
                                         }
                                     }}
                                     style={{
                                         border: `${
-                                            errMsg.multipleErr === "lastName"
-                                                ? "1px solid red"
+                                            errMsg.type === "lastName"
+                                                ? "2px solid red"
                                                 : null
                                         }`,
                                     }}
@@ -314,6 +318,7 @@ const SignUp = () => {
                                             ...prevState,
                                             error: false,
                                             multipleErr: "",
+                                            type:'',
                                         }));
                                     }
                                 }}
@@ -345,7 +350,7 @@ const SignUp = () => {
                             className="SignUpContentDownFormPhoneInputs"
                             style={{
                                 border: `${
-                                    errMsg.multipleErr == "phone"
+                                    errMsg.multipleErr === "phone"
                                         ? "2px solid red"
                                         : null
                                 }`,
@@ -365,6 +370,15 @@ const SignUp = () => {
                                             ...prevState,
                                             error: false,
                                             multipleErr: "",
+                                            type:''
+                                        }));
+                                    }
+                                    if (errMsg.type === "phone") {
+                                        setErrMsg((prevState) => ({
+                                            ...prevState,
+                                            error: false,
+                                            type: "",
+                                            multipleErr:''
                                         }));
                                     }
                                 }}
@@ -380,7 +394,7 @@ const SignUp = () => {
                                 <p>{errMsg.message}</p>
                             ) : null}
                             {errMsg.type === "passwordSmall" ? (
-                                <p>Must be 7 characters or more</p>
+                                <p>{errMsg.message}</p>
                             ) : null}
                         </div>
                         <div
@@ -409,6 +423,15 @@ const SignUp = () => {
                                             ...prevState,
                                             error: false,
                                             multipleErr: "",
+                                            type:'',
+                                        }));
+                                    }
+                                    if (errMsg.type === "password") {
+                                        setErrMsg((prevState) => ({
+                                            ...prevState,
+                                            error: false,
+                                            multipleErr: "",
+                                            type:'',
                                         }));
                                     }
                                 }}
@@ -428,7 +451,7 @@ const SignUp = () => {
                     <div className="SignUpContentDownFormCPwd">
                         <div className="SignUpContentDownFormCPwdlabels">
                             <label htmlFor="">Confirm Password</label>
-                            {errMsg.type === "confirmPassword" ? (
+                            {errMsg.type === "passwordMatch" ? (
                                 <p>{errMsg.message}</p>
                             ) : null}
                         </div>
@@ -456,6 +479,17 @@ const SignUp = () => {
                                             ...prevState,
                                             error: false,
                                             multipleErr: "",
+                                            type:''
+                                        }));
+                                    }
+                                    if (
+                                        errMsg.type === "confirmPassword"
+                                    ) {
+                                        setErrMsg((prevState) => ({
+                                            ...prevState,
+                                            error: false,
+                                            multipleErr: "",
+                                            type:''
                                         }));
                                     }
                                 }}
