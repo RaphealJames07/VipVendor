@@ -71,7 +71,7 @@ const ForgetPwd = () => {
     };
 
     const handleBackTo = () => {
-        nav("/Auth");
+        nav("/");
     };
     
     return (

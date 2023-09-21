@@ -15,8 +15,8 @@ const App = () => {
                 <ToTop />
                 <div className="MainBody">
                     <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/Auth" element={<AuthPage />} />
+                        <Route path="/Home" element={<Home />} />
+                        <Route path="/" element={<AuthPage />} />
                         <Route path="/Verify/:token" element={<Verify/>} />
                         <Route path="/ResendVerify" element={<ResendResendVerify/>} />
                         <Route path="/user/reset-password" element={<ResetPwd />} />

@@ -98,7 +98,7 @@ const ResetPwd = () => {
     };
 
     const handleBackto = () =>{
-        nav('/Auth')
+        nav('/')
     }
 
     return (

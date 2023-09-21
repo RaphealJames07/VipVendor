@@ -70,7 +70,7 @@ const ResendResendVerify = () => {
     };
 
     const handleBackTo = () => {
-        nav("/Auth");
+        nav("/");
     };
 
     return (

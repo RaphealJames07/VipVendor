@@ -56,7 +56,7 @@ const Login = () => {
                         html: "<h3>Log In Successfull</h3> <p>Loading your Dashboard...</p>",
                         timer: "5000",
                     });
-                    nav("/");
+                    nav("/Home");
                 })
                 .catch((error) => {
                     console.log(error);
