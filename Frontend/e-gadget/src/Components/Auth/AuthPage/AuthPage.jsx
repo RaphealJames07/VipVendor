@@ -3,12 +3,21 @@ import Logo from "../../../assets/Logo2.svg";
 import {useState} from "react";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
+import "../Login/Login.css";
+import "../SignUp/SIgnUp.css";
 
 const AuthPage = () => {
-    const [ui, setUi] = useState(false);
+    const [login, setLogin] = useState(true);
+    const [signUp, setSignUp] = useState(false);
 
-    const handleUiChange = () => {
-        setUi(!ui);
+    const showLogin = () => {
+        setLogin(true);
+        setSignUp(false);
+    };
+
+    const showSignUp = () => {
+        setSignUp(true);
+        setLogin(false);
     };
 
     return (
@@ -23,19 +32,43 @@ const AuthPage = () => {
                             <div className="AuthPageContentTop">
                                 <div
                                     className="AuthPageContentTop1"
-                                    onClick={handleUiChange}
+                                    onClick={showSignUp}
+                                    style={{
+                                        background: `${
+                                            signUp ? "#3F51B5" : "#fff"
+                                        }`,
+                                        color: `${signUp ? "white" : "black"}`,
+                                    }}
                                 >
                                     Create Account
                                 </div>
-                                <div className="AuthPageContentTop2" onClick={handleUiChange}>Login</div>
+                                <div
+                                    className="AuthPageContentTop2"
+                                    onClick={showLogin}
+                                    style={{
+                                        background: `${
+                                            login ? "#3F51B5" : "#fff"
+                                        }`,
+                                        color: `${login ? "white" : "black"}`,
+                                    }}
+                                >
+                                    Login
+                                </div>
                             </div>
-                            {!ui ? (
-                                <>
-                                    <SignUp />
-                                </>
-                            ) : (
+                            <div
+                                className={`LoginContentDown ${
+                                    login ? "" : "hidden"
+                                }`}
+                            >
                                 <Login />
-                            )}
+                            </div>
+                            <div
+                                className={`SignUpContentDown ${
+                                    signUp ? "" : "hidden"
+                                }`}
+                            >
+                                <SignUp />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -43,5 +76,6 @@ const AuthPage = () => {
         </>
     );
 };
+  
 
 export default AuthPage;
