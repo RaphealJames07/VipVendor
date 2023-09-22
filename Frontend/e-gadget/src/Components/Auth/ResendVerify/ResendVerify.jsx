@@ -47,6 +47,8 @@ const ResendResendVerify = () => {
                 .post(url, data)
                 .then((res) => {
                     console.log(res);
+                    setLoading(false);
+                    
                     Swal.fire({
                         icon: "success",
                         title: "Success",
@@ -54,7 +56,8 @@ const ResendResendVerify = () => {
                         timer: "5000",
                     });
                     const token = res.data.token
-                    nav(`/Verify/${token}`)
+                    const emailTo = email
+                    nav(`/Verify/${token}?email=${emailTo}`);
                 })
                 .catch((error) => {
                     console.log(error);
