@@ -55,7 +55,7 @@ const ForgetPwd = () => {
                         html: "<h3>Code Resent Successfully <p>Check Your mail for code </p></h3>",
                         
                     });
-                    nav("/Auth");
+                    nav("/");
                 })
                 .catch((error) => {
                     console.log(error);

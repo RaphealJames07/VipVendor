@@ -148,7 +148,7 @@ const Verify = () => {
                     html: '<h3>Account Verified Successfully</h3> <p>Taking you back to Login...</p>',
                     timer: '5000'
                 });
-                nav('/Auth')
+                nav('/')
              })
              .catch((error)=>{
                 console.log(error);
@@ -163,7 +163,7 @@ const Verify = () => {
     };
 
     const handleBackTo = () =>{
-        nav('/Auth')
+        nav('/')
     }
 
     function hideEmail(email) {

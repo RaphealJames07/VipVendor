@@ -18,11 +18,11 @@ const SignUp = () => {
     const handleShowPasswordC = () => {
         setShowPasswordC(!showPasswordC);
     };
-    const[quanVal, setQuanVal] = useState()
-    const[uppCaseVal, setUppCaseVal] = useState()
-    const[lowCaseVal, setLowCaseVal] = useState()
-    const[numVal, setNumVal] = useState()
-    const[specCharVal, setSpecCharVal] = useState()
+    const[quanVal, setQuanVal] = useState(false)
+    const[uppCaseVal, setUppCaseVal] = useState(false)
+    const[lowCaseVal, setLowCaseVal] = useState(false)
+    const[numVal, setNumVal] = useState(false)
+    const[specCharVal, setSpecCharVal] = useState(false)
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -35,7 +35,9 @@ const SignUp = () => {
         type: "",
         message: "",
         multipleErr: "",
+        div: "",
     });
+    // const [trackDiv, setTrackDiv] = useState(false);
     const [loading, setLoading] = useState(false);
     const [inputErr, setInputErr] = useState(true);
     const [backErr, setBackErr] = useState("");
@@ -50,20 +52,67 @@ const SignUp = () => {
         confirmPassword,
     };
     const url = "https://e-gadget.onrender.com/api/sign-up";
-    const nav = useNavigate()
+    const nav = useNavigate();
+
+    const handleInputChange = (e, inputType) => {
+        const inputValue = e.target.value;
+
+        // Reset error styles when input value changes
+        setErrMsg((prevState) => ({
+            ...prevState,
+            error: false,
+            type: "",
+            message: "",
+            multipleErr: "",
+            div: "",
+        }));
+
+        // Set the input value based on the inputType
+        switch (inputType) {
+            case "firstName":
+                setFirstName(inputValue);
+                break;
+            case "lastName":
+                setLastName(inputValue);
+                break;
+            case "email":
+                setEmail(inputValue);
+                break;
+            case "phone":
+                setPhoneNumber(inputValue);
+                break;
+            case "password":
+                setPassword(inputValue);
+                break;
+            case "confirmPassword":
+                setConfirmPassword(inputValue);
+                break;
+            default:
+                break;
+        }
+    };
+    const [phoneDivError, setPhoneDivError] = useState(false);
+    const [passwordDivError, setPasswordDivError] = useState(false);
+    const [confirmPasswordDivError, setConfirmPasswordDivError] =
+        useState(false);
 
     const HandleSignUp = (e) => {
         console.log("Signing Up...");
         e.preventDefault();
         setErrMsg({error: false, type: "", message: "", multipleErr: ""});
+        setPhoneDivError(false);
+        setPasswordDivError(false);
+        setConfirmPasswordDivError(false);
         if (!firstName) {
             setErrMsg({
                 error: true,
                 type: "firstName",
                 message: "Enter Name",
                 multipleErr: "firstName",
+                div: "firstName",
             });
             // setErrMsg('');
+
             setLoading(false);
             setInputErr(false);
         } else if (!lastName) {
@@ -72,7 +121,9 @@ const SignUp = () => {
                 type: "lastName",
                 message: "Enter Name",
                 multipleErr: "lastName",
+                div: "lastName",
             });
+
             setLoading(false);
             setInputErr(false);
         } else if (!email) {
@@ -81,7 +132,9 @@ const SignUp = () => {
                 type: "email",
                 message: "Input Email Address",
                 multipleErr: "email",
+                div: "email",
             });
+
             setLoading(false);
             setInputErr(false);
         } else if (!email.includes("@")) {
@@ -90,7 +143,9 @@ const SignUp = () => {
                 type: "email@",
                 message: "email must include @",
                 multipleErr: "email",
+                div: "email",
             });
+
             setLoading(false);
             setInputErr(false);
         } else if (!phoneNumber) {
@@ -99,7 +154,10 @@ const SignUp = () => {
                 type: "phoneNumber",
                 message: "Enter Phone Number",
                 multipleErr: "phone",
+                div: "phone",
             });
+
+            setPhoneDivError(true);
             setLoading(false);
             setInputErr(false);
         } else if (phoneNumber.length < 11) {
@@ -108,7 +166,9 @@ const SignUp = () => {
                 type: "phoneLength",
                 message: "Phone No Must be 11 digits",
                 multipleErr: "phone",
+                div: "phone",
             });
+            setPhoneDivError(true);
             setLoading(false);
             setInputErr(false);
         } else if (!/^\d+$/.test(phoneNumber)) {
@@ -117,7 +177,9 @@ const SignUp = () => {
                 type: "phoneAlpha",
                 message: "No Alphabets allowed",
                 multipleErr: "phone",
+                div: "phone",
             });
+            setPhoneDivError(true);
             setLoading(false);
             setInputErr(false);
         } else if (password.length < 7) {
@@ -126,7 +188,9 @@ const SignUp = () => {
                 type: "passwordSmall",
                 message: "must be 8 characters long",
                 multipleErr: "password",
+                div: "password",
             });
+            setPasswordDivError(true);
             setLoading(false);
             setInputErr(false);
         } else if (password !== confirmPassword) {
@@ -135,10 +199,15 @@ const SignUp = () => {
                 type: "passwordMatch",
                 message: "password does not match",
                 multipleErr: "confirmPassword",
+                div: "confirmPassword",
             });
+            setConfirmPasswordDivError(true);
             setLoading(false);
             setInputErr(false);
         } else {
+            setPhoneDivError(false);
+            setPasswordDivError(false);
+            setConfirmPasswordDivError(false);
             setLoading(true);
             setInputErr(true);
             setErrMsg("");
@@ -149,14 +218,14 @@ const SignUp = () => {
                     setLoading(false);
                     setInputErr(false);
                     Swal.fire({
-                        icon: 'success',
+                        icon: "success",
                         title: "Success",
-                        html: '<h3>Account Created Successfully</h3> <p>Sending verification code...</p>',
-                        timer: '8000'
+                        html: "<h3>Account Created Successfully</h3> <p>Sending verification code...</p>",
+                        timer: "8000",
                     });
-                    const token = res.data.data.token
-                    const email = res.data.data.email
-                    nav(`/Verify/${token}?email=${email}`)
+                    const token = res.data.data.token;
+                    const email = res.data.data.email;
+                    nav(`/Verify/${token}?email=${email}`);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -172,52 +241,44 @@ const SignUp = () => {
                 });
         }
 
-        
-
         useEffect(() => {
             setBackErr();
         }, []);
-
     };
 
-
     useEffect(() => {
-        if(!/[A-Z]/.test(password)) {
-            console.log('Password must contain at least one uppercase letter');
-            setUppCaseVal(true)
-          }
-        
-          else if(!/[a-z]/.test(password)) {
-            console.log('Password must contain at least one lowercase letter');
-            setLowCaseVal(true)
-            
-          }
+        if (!/[A-Z]/.test(password)) {
+            setUppCaseVal(true);
+        } else {
+            setUppCaseVal(false); 
+        }
     
-          else if(!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(password)) {
-            console.log('Password must contain at least one special character');
-            setSpecCharVal(true)
-            
-          }
-        
-          else if(!password.split('').some(char => '0123456789'.includes(char))) {
-            console.log('Password must contain at least one number');
-            setNumVal(true)
-            
-          }
-          else if(password.length < 8){
-              console.log("password must be more than 8 character");
-              setQuanVal(true)
-          }
-        
-           else{
-              setQuanVal(false)
-              setNumVal(false)
-              setSpecCharVal(false)
-              setLowCaseVal(false)
-              setUppCaseVal(false)
-           }
-}, [password]);
+        if (!/[a-z]/.test(password)) {
+            setLowCaseVal(true);
+        } else {
+            setLowCaseVal(false); 
+        }
     
+        if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(password)) {
+            setSpecCharVal(true);
+        } else {
+            setSpecCharVal(false); 
+        }
+    
+        if (!password.split('').some(char => '0123456789'.includes(char))) {
+            setNumVal(true);
+        } else {
+            setNumVal(false); 
+        }
+    
+        if (password.length < 8) {
+            setQuanVal(true);
+        } else {
+            setQuanVal(false); 
+        }
+    }, [password]);
+    
+
     return (
         <>
             <div className="SignUpContentDownWrap">
@@ -239,22 +300,12 @@ const SignUp = () => {
                                     type="text"
                                     placeholder="Input First Name"
                                     value={firstName}
-                                    onChange={(e) => {
-                                        setFirstName(e.target.value);
-                                        if (
-                                            errMsg.multipleErr === "firstName"
-                                        ) {
-                                            setErrMsg((prevState) => ({
-                                                ...prevState,
-                                                error: false,
-                                                multipleErr: "",
-                                                type:''
-                                            }));
-                                        }
-                                    }}
+                                    onChange={(e) =>
+                                        handleInputChange(e, "firstName")
+                                    } // Pass input type to handleInputChange
                                     style={{
                                         border: `${
-                                            errMsg.multipleErr === "firstName"
+                                            errMsg.type === "firstName"
                                                 ? "2px solid red"
                                                 : ""
                                         }`,
@@ -274,22 +325,14 @@ const SignUp = () => {
                                     type="text"
                                     placeholder="Input Last Name"
                                     value={lastName}
-                                    onChange={(e) => {
-                                        setLastName(e.target.value);
-                                        if (errMsg.multipleErr === "lastName") {
-                                            setErrMsg((prevState) => ({
-                                                ...prevState,
-                                                error: false,
-                                                multipleErr: "",
-                                                type:'',
-                                            }));
-                                        }
-                                    }}
+                                    onChange={(e) =>
+                                        handleInputChange(e, "lastName")
+                                    } // Pass input type to handleInputChange
                                     style={{
                                         border: `${
                                             errMsg.type === "lastName"
                                                 ? "2px solid red"
-                                                : null
+                                                : ""
                                         }`,
                                     }}
                                 />
@@ -308,25 +351,15 @@ const SignUp = () => {
                         </div>
                         <div className="SignUpContentDownFormMailInputs">
                             <input
-                                type="text"
+                                type="email"
                                 placeholder="Input Email"
                                 value={email}
-                                onChange={(e) => {
-                                    setEmail(e.target.value);
-                                    if (errMsg.multipleErr === "email") {
-                                        setErrMsg((prevState) => ({
-                                            ...prevState,
-                                            error: false,
-                                            multipleErr: "",
-                                            type:'',
-                                        }));
-                                    }
-                                }}
+                                onChange={(e) => handleInputChange(e, "email")}
                                 style={{
                                     border: `${
-                                        errMsg.multipleErr == "email"
+                                        errMsg.multipleErr === "email"
                                             ? "2px solid red"
-                                            : null
+                                            : ""
                                     }`,
                                 }}
                             />
@@ -350,39 +383,23 @@ const SignUp = () => {
                             className="SignUpContentDownFormPhoneInputs"
                             style={{
                                 border: `${
-                                    errMsg.multipleErr === "phone"
-                                        ? "2px solid red"
-                                        : null
+                                    phoneDivError ? "2px solid red" : ""
                                 }`,
                             }}
                         >
                             <div className="SignUpContentDownFormPhoneFlag">
                                 <img src={Flag} alt="" /> <span>+234</span>
                             </div>
+
                             <input
                                 type="tel"
                                 placeholder="Input Number"
                                 value={phoneNumber}
-                                onChange={(e) => {
-                                    setPhoneNumber(e.target.value);
-                                    if (errMsg.multipleErr === "phone") {
-                                        setErrMsg((prevState) => ({
-                                            ...prevState,
-                                            error: false,
-                                            multipleErr: "",
-                                            type:''
-                                        }));
-                                    }
-                                    if (errMsg.type === "phone") {
-                                        setErrMsg((prevState) => ({
-                                            ...prevState,
-                                            error: false,
-                                            type: "",
-                                            multipleErr:''
-                                        }));
-                                    }
-                                }}
                                 maxLength={11}
+                                onChange={(e) => {
+                                    handleInputChange(e, "phone");
+                                    setPhoneDivError(false);
+                                }}
                             />
                         </div>
                     </div>
@@ -401,9 +418,7 @@ const SignUp = () => {
                             className="SignUpContentDownFormPwdInputs"
                             style={{
                                 border: `${
-                                    errMsg.multipleErr === "password"
-                                        ? "2px solid red"
-                                        : null
+                                    passwordDivError ? "2px solid red" : ""
                                 }`,
                             }}
                         >
@@ -411,29 +426,15 @@ const SignUp = () => {
                                 type={!showPassword ? "password" : "text"}
                                 placeholder="Input Password"
                                 value={password}
-                                onFocus={()=>setProcess(true)}
-                                onBlur={()=>{
-                                    !password?setProcess(false):setProcess(true)
+                                onFocus={() => setProcess(true)}
+                                onBlur={() => {
+                                    !password
+                                        ? setProcess(false)
+                                        : setProcess(true);
                                 }}
                                 onChange={(e) => {
-                                    // madValidation()
-                                    setPassword(e.target.value);
-                                    if (errMsg.multipleErr === "password") {
-                                        setErrMsg((prevState) => ({
-                                            ...prevState,
-                                            error: false,
-                                            multipleErr: "",
-                                            type:'',
-                                        }));
-                                    }
-                                    if (errMsg.type === "password") {
-                                        setErrMsg((prevState) => ({
-                                            ...prevState,
-                                            error: false,
-                                            multipleErr: "",
-                                            type:'',
-                                        }));
-                                    }
+                                    handleInputChange(e, "password");
+                                    setPasswordDivError(false);
                                 }}
                             />
                             <div
@@ -459,9 +460,9 @@ const SignUp = () => {
                             className="SignUpContentDownFormcPwdInputs"
                             style={{
                                 border: `${
-                                    errMsg.multipleErr === "confirmPassword"
+                                    confirmPasswordDivError
                                         ? "2px solid red"
-                                        : null
+                                        : ""
                                 }`,
                             }}
                         >
@@ -470,28 +471,9 @@ const SignUp = () => {
                                 placeholder="Confirm Your Password"
                                 value={confirmPassword}
                                 onChange={(e) => {
-                                    setConfirmPassword(e.target.value);
-                                    setInputErr(false)
-                                    if (
-                                        errMsg.multipleErr === "confirmPassword"
-                                    ) {
-                                        setErrMsg((prevState) => ({
-                                            ...prevState,
-                                            error: false,
-                                            multipleErr: "",
-                                            type:''
-                                        }));
-                                    }
-                                    if (
-                                        errMsg.type === "confirmPassword"
-                                    ) {
-                                        setErrMsg((prevState) => ({
-                                            ...prevState,
-                                            error: false,
-                                            multipleErr: "",
-                                            type:''
-                                        }));
-                                    }
+                                    handleInputChange(e, "confirmPassword");
+                                    setConfirmPasswordDivError(false);
+                                    setInputErr(false);
                                 }}
                             />
                             <div
@@ -527,32 +509,45 @@ const SignUp = () => {
                     </button>
                 </div>
             </div>
-          {
-            process?
-            <div className="Validation_Process">
-            <div className="Validation_Head">
-                <span>Your Password must contain</span>
-            </div>
-            <div className="Validation_Body">
-                <div>
-                    <span style={{color:uppCaseVal?"red":uppCaseVal === false?"green":null}}>UpperCase(A-Z)</span>{uppCaseVal === false?<FcCheckmark />:null}
+            {process ? (
+                <div className="Validation_Process">
+                    <div className="Validation_Head">
+                        <span>Your Password must contain</span>
+                    </div>
+                    <div className="Validation_Body">
+                        <div>
+                            <span style={{color: `${uppCaseVal ? 'red': 'green'}`}}>
+                                UpperCase(A-Z)
+                            </span>
+                            {uppCaseVal === false ? <FcCheckmark /> : null}
+                        </div>
+                        <div>
+                            <span style={{color: `${lowCaseVal ? 'red': 'green'}`}}>
+                                LowerCase(a-z)
+                            </span>
+                            {lowCaseVal === false ? <FcCheckmark /> : null}
+                        </div>
+                        <div>
+                            <span style={{color: `${specCharVal ? 'red': 'green'}`}}>
+                                Special Characters
+                            </span>
+                            {specCharVal === false ? <FcCheckmark /> : null}
+                        </div>
+                        <div>
+                            <span style={{color: `${numVal ? 'red': 'green'}`}}>
+                                Number(0-9)
+                            </span>
+                            {numVal === false ? <FcCheckmark /> : null}
+                        </div>
+                        <div>
+                            <span style={{color: `${quanVal ? 'red': 'green'}`}}>
+                                8+ characters
+                            </span>
+                            {quanVal === false ? <FcCheckmark /> : null}
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <span style={{color:lowCaseVal?"red":lowCaseVal === false?"green":null}}>LowerCase(a-z)</span>{lowCaseVal === false?<FcCheckmark />:null}
-                </div>
-                <div>
-                    <span style={{color:specCharVal?"red":specCharVal === false?"green":null}}>Special Characters</span>{specCharVal === false?<FcCheckmark />:null}
-                </div>
-                <div>
-                    <span style={{color:numVal?"red":numVal === false?"green":null}}>Number(0-9)</span>{numVal === false?<FcCheckmark />:null}
-                </div>
-                <div>
-                    <span style={{color:quanVal?"red":quanVal === false?"green":null}}>8+ characters</span>{quanVal === false?<FcCheckmark />:null}
-                </div>
-            </div>
-
-        </div>:null
-          }
+            ) : null}
         </>
     );
 };
