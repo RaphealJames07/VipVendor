@@ -271,7 +271,7 @@ const SignUp = () => {
             setNumVal(false); 
         }
     
-        if (password.length < 8) {
+        if (password.length < 7) {
             setQuanVal(true);
         } else {
             setQuanVal(false); 
@@ -541,7 +541,7 @@ const SignUp = () => {
                         </div>
                         <div>
                             <span style={{color: `${quanVal ? 'red': 'green'}`}}>
-                                8+ characters
+                                7+ characters
                             </span>
                             {quanVal === false ? <FcCheckmark /> : null}
                         </div>
