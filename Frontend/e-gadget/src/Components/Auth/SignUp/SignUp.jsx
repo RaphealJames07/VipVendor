@@ -249,30 +249,35 @@ const SignUp = () => {
     useEffect(() => {
         if (!/[A-Z]/.test(password)) {
             setUppCaseVal(true);
+            setInputErr(true)
         } else {
             setUppCaseVal(false); 
         }
     
         if (!/[a-z]/.test(password)) {
             setLowCaseVal(true);
+            setInputErr(true)
         } else {
             setLowCaseVal(false); 
         }
     
         if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(password)) {
             setSpecCharVal(true);
+            setInputErr(true)
         } else {
             setSpecCharVal(false); 
         }
     
         if (!password.split('').some(char => '0123456789'.includes(char))) {
             setNumVal(true);
+            setInputErr(true)
         } else {
             setNumVal(false); 
         }
     
         if (password.length < 7) {
             setQuanVal(true);
+            setInputErr(true)
         } else {
             setQuanVal(false); 
         }
