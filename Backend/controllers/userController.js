@@ -219,7 +219,8 @@ const resendVerificationEmail = async (req, res) => {
         sendEmail(mail);
 
         res.status(200).json({
-            message: `Verification email sent successfully to your email: ${user.email}`
+            message: `Verification email sent successfully to your email: ${user.email}`,
+            token
         });
 
     } catch (error) {
@@ -253,7 +254,7 @@ const forgotPassword = async (req, res) => {
         console.log(resetToken)
 
         const subject = "Password Reset";
-        const link = `${req.protocol}://${req.get('host')}/user/reset-password/${resetToken}`;
+        const link =  `https://curvegadgets.onrender.com/#/user/reset-password?token={resetToken}`;
         const html = await forgotMailTemplate(link, user.firstName);
         const mail = {
             email: email,
@@ -272,6 +273,7 @@ const forgotPassword = async (req, res) => {
         });
     }
 };
+
 
 
 // Reset Password
