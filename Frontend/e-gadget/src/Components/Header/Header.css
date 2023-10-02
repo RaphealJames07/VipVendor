@@ -1,0 +1,159 @@
+/* 
+/* TEMPLATE FOR STYLINGS */
+
+/* Media Query Styling For Desktop Device */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.HeaderBody{
+  width: 100%;
+  height: 80px;
+  /* background: lightcoral; */
+  display: flex;
+  justify-content: center;
+}
+
+.HeaderWrap{
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.HeaderLogo{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.HeaderLogo img{
+  width: 60%;
+  height: 80%;
+}
+
+.HeaderNav{
+  width: 45%;
+  height: 100%;
+}
+.HeaderNav ul{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.HeaderNav ul li{
+  list-style-type: none;
+  width: 18%;
+  height: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: rgb(182, 236, 236); */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.HeaderAcc{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.HeaderAccSearchDiv{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AiOutlineSearch{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.HeaderAccUserDiv{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.BiSolidUserCircle{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.HeaderAccCartDiv{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FaShoppingCart{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+
+
+/* End of Media Query Styling For Desktop Device */
+
+/* Media Query Styling for Tablet Device */
+
+@media only screen and (max-width: 1024px){
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+}
+
+/* End of Media Query Styling for Tablet Device */
+
+/* Media Query Styling for Mobile Device */
+
+@media only screen and (max-width: 450px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+}
+
+/* End of Media Query Styling for Mobile Device */
+
+
+/* Media Query Styling for Mobile Device */
+
+@media only screen and (max-width: 351px) {
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+}
+
+/* End of Media Query Styling for Mobile Device */ 

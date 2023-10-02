@@ -1,0 +1,150 @@
+/* 
+/* TEMPLATE FOR STYLINGS */
+
+/* Media Query Styling For Desktop Device */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.BestWeekBody{
+  width: 100%;
+  height: 15%;
+  /* background: grey; */
+  margin-bottom: 10px;
+}
+
+.BestWeekBodyTop{
+  width: 100%;
+  height: 15%;
+  background: #dcf5f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 75px;
+  color: #3F51B5;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.BestWeekBodyDown{
+  width: 100%;
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BestWeekBodyDownWrap{
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.BestWeekItem1{
+  width: 20%;
+  height: 90%;
+  border-radius: 7px;
+  cursor: pointer;
+  border: 2px solid rgb(225, 225, 225);
+}
+
+.BestWeekItem1ImgDiv{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #dff5fc;
+  border-radius: 7px 7px 0 0;
+}
+
+.BestWeekItem1ImgDiv img{
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.BestWeekItem1ImgDiv span{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.BestWeekItem1DetailDiv{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+.BestWeekItem1DetailDiv p{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.BestWeekItem1DetailDiv p span{
+  text-decoration:line-through;
+}
+
+/* End of Media Query Styling For Desktop Device */
+
+/* Media Query Styling for Tablet Device */
+
+@media only screen and (max-width: 1024px){
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+}
+
+/* End of Media Query Styling for Tablet Device */
+
+/* Media Query Styling for Mobile Device */
+
+@media only screen and (max-width: 450px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+}
+
+/* End of Media Query Styling for Mobile Device */
+
+
+/* Media Query Styling for Mobile Device */
+
+@media only screen and (max-width: 351px) {
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+}
+
+/* End of Media Query Styling for Mobile Device */ 

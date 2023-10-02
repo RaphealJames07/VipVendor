@@ -1,19 +1,21 @@
-import {useNavigate} from "react-router";
 import "./Home.css";
+import Header from "../Header/Header";
+import Hero from "../Hero/Hero";
+import HomeProduct from "../HomeProducts/HomeProduct";
+import Services from "../Services/Services";
+import Testimonial from "../Testimonial/Testimonial";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
-    const nav = useNavigate();
-
-    const handleNavBack = () => {
-        nav("/");
-    };
-
     return (
         <>
             <div className="HomeBody">
-                <h1>Welcome To HomePage</h1>
-                <p>The homepage is under development check later</p>
-                <button onClick={handleNavBack}>Visit Signup</button>
+                <Header />
+                <Hero />
+                <HomeProduct />
+                <Services />
+                <Testimonial />
+                <Footer/>
             </div>
         </>
     );

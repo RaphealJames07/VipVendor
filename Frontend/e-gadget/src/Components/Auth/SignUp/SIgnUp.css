@@ -439,6 +439,15 @@ input{
   font-weight: 500;
   font-family: monospace;
   border-radius: 3px;
+  /* color: red; */
+}
+
+.criteria-error {
+  color: red;
+}
+
+.criteria-success {
+  color: green;
 }
 
 

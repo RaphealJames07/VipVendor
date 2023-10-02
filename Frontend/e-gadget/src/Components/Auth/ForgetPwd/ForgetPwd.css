@@ -38,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .ForgetPwdContentDivWrap{
@@ -49,8 +50,9 @@
   align-items: center;
   background: #fff;
 }
-.ForgetPwdContentDivWrap h1{
-  font-size: 40px;
+.ForgetPwdContentDiv h1{
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 .ForgetPwdContentDivWrap p{
   text-align: center;
