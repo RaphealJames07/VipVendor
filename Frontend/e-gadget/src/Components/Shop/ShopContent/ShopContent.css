@@ -290,7 +290,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
+  /* justify-content: space-between; */
 }
 
 .ShopResultDivDownLeftFilterDiv {
@@ -300,6 +301,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #000;
+  /* background: #000; */
 }
 
 .ShopResultDivDownLeftFilterDiv1 {
@@ -350,6 +352,107 @@
   align-items: center;
   cursor: pointer;
 }
+
+.ShopResultDivDownLeftPriceDiv{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ShopResultDivDownLeftPriceDiv1{
+  width: 50%;
+  height: 30%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  padding-left: 15px;
+  color: #555;
+  font-size: 20px;
+}
+
+.ShopResultDivDownLeftPriceDiv2{
+  width: 100%;
+  height: 20%;
+  padding-top: 10px;
+  
+}
+
+.ShopResultDivDownLeftPriceDiv3{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ShopResultDivDownLeftPriceDiv3Left{
+  width: 35%;
+  height: 100%;
+  border: 2px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.ShopResultDivDownLeftPriceDiv3Right{
+  width: 35%;
+  height: 100%;
+  border: 2px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.ShopResultDivDownLeftColorDiv{
+  width: 100%;
+  height: 7%;
+}
+
+.ShopResultDivDownLeftColorDiv1{
+  width: 50%;
+  height: 40%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  padding-left: 15px;
+  color: #555;
+  font-size: 20px;
+}
+
+.ShopResultDivDownLeftColorDiv2{
+  width: 70%;
+  height: 50%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.ShopResultDivDownLeftColorDiv2 span{
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background: #000;
+}
+
+.ShopResultDivDownLeftBrandDiv{
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
