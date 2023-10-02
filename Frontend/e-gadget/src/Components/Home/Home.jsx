@@ -1,28 +1,21 @@
-import {useNavigate} from "react-router";
 import "./Home.css";
+import Header from "../Header/Header";
+import Hero from "../Hero/Hero";
+import HomeProduct from "../HomeProducts/HomeProduct";
+import Services from "../Services/Services";
+import Testimonial from "../Testimonial/Testimonial";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
-    const nav = useNavigate();
-
-    const handleNavBack = () => {
-        nav("/");
-    };
-
     return (
         <>
             <div className="HomeBody">
-                <h1>Welcome To HomePage</h1>
-                <p>The homepage is under development check later</p>
-                <p>Some prompts to check out</p>
-                <ul>
-                    <li>Login</li>
-                    <li>Sign Up</li>
-                    <li>Forget Password</li>
-                    <li>Reset Password</li>
-                    <li>Verification</li>
-                    <li>Resend Verification(opens when you try to log in but you already have an account but not yet verified)</li>
-                </ul>
-                <button onClick={handleNavBack}>Visit Signup</button>
+                <Header />
+                <Hero />
+                <HomeProduct />
+                <Services />
+                <Testimonial />
+                <Footer/>
             </div>
         </>
     );

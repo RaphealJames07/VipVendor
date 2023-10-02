@@ -1,0 +1,404 @@
+/* 
+/* TEMPLATE FOR STYLINGS */
+
+/* Media Query Styling For Desktop Device */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ShopContentBody {
+  width: 100%;
+  height: 350vh;
+}
+
+.ShopSearchDiv {
+  width: 100%;
+  height: 6%;
+  background: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background: #3F51B5;
+}
+
+.ShopSearchDivTop {
+  width: 90%;
+  height: 43%;
+  background: #fff;
+  display: flex;
+  border-radius: 5px;
+}
+
+.ShopSearchDivTop input {
+  width: 75%;
+  height: 100%;
+  font-size: 17px;
+  border-top: 0;
+  border-right: 1px solid #000;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  padding-left: 15px;
+}
+
+.ShopSearchDivTop select {
+  width: 20%;
+  height: 100%;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+}
+
+.ShopSearchDivTop button {
+  width: 5%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+
+.ShopSearchDivTop button .AiOutlineSearch {
+  width: 50%;
+  height: 50%;
+}
+
+.ShopSearchDivDown {
+  width: 70%;
+  height: 43%;
+  background: #fff;
+  display: flex;
+  border-radius: 5px;
+}
+
+.ShopSearchDivDownItemA,
+.ShopSearchDivDownItemB,
+.ShopSearchDivDownItemC,
+.ShopSearchDivDownItemD,
+.ShopSearchDivDownItemE {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid grey;
+  font-size: 18px;
+  cursor: pointer;
+  color: grey;
+}
+
+.ShopSearchDivDownItemA {
+  border-radius: 5px 0 0 5px;
+  border-left: none;
+  background: #ddd;
+  color: #3F51B5;
+}
+
+.ShopSearchDivDownItemE {
+  border-radius: 0 5px 5px 0;
+  border-right: none;
+}
+
+.ShopBrandDiv {
+  width: 100%;
+  height: 11%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.ShopBrandDivTop {
+  width: 90%;
+  height: 15%;
+}
+
+.ShopBrandDivTopDivSmall {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 15px;
+  font-size: 17px;
+}
+
+.ShopBrandDivTopDivSmall .BiArrowBack {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #3F51B5;
+}
+
+.ShopBrandDivTopDivSmall p {
+  margin: 0 10px;
+}
+
+.ShopBrandDivTopDivSmall p span {
+  margin: 0 5px;
+  padding: 0 5px;
+}
+
+.ShopBrandDivTopDivSmall p span:last-child {
+  color: #3F51B5;
+}
+
+.ShopBrandDivDown {
+  width: 95%;
+  height: 80%;
+  background: #fff;
+  display: flex;
+}
+
+.ShopBrandDivDownWrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ShopBrandDivDownItem {
+  width: 15%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(173, 173, 173, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0;
+}
+
+.ShopBrandDivDownItem img {
+  width: 80%;
+  height: 80%;
+  background: #e1c3c3;
+  border-radius: 5px;
+}
+
+.ShopBrandDivDownItem p {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.ShopResultDiv {
+  width: 100%;
+  height: 84%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ShopResultDivTop {
+  width: 100%;
+  height: 3%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 75px;
+}
+
+.ShopResultDivTopLeft {
+  width: 15%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+}
+
+.ShopResultDivTopRight {
+  width: 30%;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ShopResultDivTopRight1 {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ShopResultDivTopRight1 p {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  font-size: 16px;
+}
+
+.ShopResultDivTopRight1 select {
+  width: 95%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #3F51B5;
+}
+
+.ShopResultDivTopRight2 {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #3F51B5;
+}
+
+.ShopResultDivTopRight2 .MdViewList,
+.HiViewGrid {
+  width: 35%;
+  height: 100%;
+}
+
+.ShopResultDivDown {
+  width: 100%;
+  height: 95%;
+  display: flex;
+}
+
+.ShopResultDivDownLeft {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ShopResultDivDownLeftWrap {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ShopResultDivDownLeftFilterDiv {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #000;
+}
+
+.ShopResultDivDownLeftFilterDiv1 {
+  width: 20%;
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  color: #3F51B5;
+}
+
+.ShopResultDivDownLeftFilterDiv1 .FaFilter {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.ShopResultDivDownLeftFilterDiv1 p {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.ShopResultDivDownLeftFilterDiv2 {
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+
+.ShopResultDivDownLeftFilterDiv2 p {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 30px;
+}
+
+.ShopResultDivDownLeftFilterDiv2 .BiReset {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+
+
+/* End of Media Query Styling For Desktop Device */
+
+/* Media Query Styling for Tablet Device */
+
+@media only screen and (max-width: 1024px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+}
+
+/* End of Media Query Styling for Tablet Device */
+
+/* Media Query Styling for Mobile Device */
+
+@media only screen and (max-width: 450px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+}
+
+/* End of Media Query Styling for Mobile Device */
+
+
+/* Media Query Styling for Mobile Device */
+
+@media only screen and (max-width: 351px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+}
+
+/* End of Media Query Styling for Mobile Device */
