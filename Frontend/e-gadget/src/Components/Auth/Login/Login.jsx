@@ -16,19 +16,19 @@ const Login = () => {
         setShowPassword(!showPassword);
     };
 
-    const [email, setEmailPhone] = useState("");
+    const [userData, setUserData] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [errMsg, setErrMsg] = useState({error: false, type: "", msg: ""});
     const [inputErr, setInputErr] = useState(true);
 
     const url = `https://e-gadget.onrender.com/api/sign-in`;
-    const data = {email, password};
+    const data = {userData, password};
 
     const handleLoginIn = (e) => {
         e.preventDefault();
         setLoading(true);
-        if (!email) {
+        if (!userData) {
             setErrMsg({
                 error: true,
                 type: "noMailPhone",
@@ -100,7 +100,7 @@ const Login = () => {
                                 type="text"
                                 placeholder="Input Email"
                                 onChange={(e) => {
-                                    setEmailPhone(e.target.value);
+                                    setUserData(e.target.value);
                                     if (errMsg.type === "noMailPhone") {
                                         setErrMsg((prevState) => ({
                                             ...prevState,
@@ -109,7 +109,7 @@ const Login = () => {
                                         }));
                                     }
                                 }}
-                                value={email}
+                                value={userData}
                                 style={{
                                     border: `${
                                         errMsg.type === "noMailPhone"

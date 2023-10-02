@@ -1,7 +1,7 @@
 /* 
 /* TEMPLATE FOR STYLINGS */
 
-/* Media Query Styling For Desktop Device *
+/* Media Query Styling For Desktop Device */
 
 *{
   margin: 0;
@@ -10,10 +10,9 @@
 }
 
 .MainBody{
+  font-family: sans-serif;
   width: 100%;
-  height: max-content;
 }
-
 
 
 /* End of Media Query Styling For Desktop Device */
@@ -36,6 +35,22 @@
 /* Media Query Styling for Mobile Device */
 
 @media only screen and (max-width: 450px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+}
+
+/* End of Media Query Styling for Mobile Device */
+
+
+/* Media Query Styling for Mobile Device */
+
+@media only screen and (max-width: 351px) {
 
 *{
   margin: 0;

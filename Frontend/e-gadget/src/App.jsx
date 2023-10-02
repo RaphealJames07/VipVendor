@@ -7,6 +7,11 @@ import ResendResendVerify from "./Components/Auth/ResendVerify/ResendVerify";
 import Home from "./Components/Home/Home";
 import ForgetPwd from "./Components/Auth/ForgetPwd/ForgetPwd";
 import ResetPwd from "./Components/Auth/ResetPwd/ResetPwd";
+import Shop from "./Components/Shop/Shop";
+import About from './Components/About/About'
+import Contact from './Components/Contact/Contact'
+import Blog from './Components/Blog/Blog'
+
 
 const App = () => {
     return (
@@ -21,6 +26,10 @@ const App = () => {
                         <Route path="/ResendVerify" element={<ResendResendVerify/>} />
                         <Route path="/user/reset-password" element={<ResetPwd />} />
                         <Route path="/ForgetPassword" element={<ForgetPwd/>} />
+                        <Route path="/Shop" element={<Shop/>} />
+                        <Route path="/About" element={<About/>} />
+                        <Route path="/Contact" element={<Contact/>} />
+                        <Route path="/Blog" element={<Blog/>} />
                     </Routes>
                 </div>
             </HashRouter>
