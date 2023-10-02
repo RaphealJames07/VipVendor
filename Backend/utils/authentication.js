@@ -1,10 +1,12 @@
-const jwt = require("jsonwebtoken");
-const userModel = require("../models/userModel");
-const revokedToken = require("../models/revokedTokenModel");
+const jwt = require('jsonwebtoken');
+const userModel = require('../models/userModel');
+const revokedToken = require('../models/revokedTokenModel');
+
 
 // To authenticate if a user is signed in
 
 const authenticate = async (req, res, next) => {
+
   try {
     const hasAuthorization = req.headers.authorization;
 
@@ -55,6 +57,7 @@ const authenticate = async (req, res, next) => {
       message: error.message,
     });
   }
+
 };
 //   try {
 //     const hasAuthorization = req.headers.authorization;
@@ -109,20 +112,20 @@ const authenticate = async (req, res, next) => {
 // }
 
 const isAdmin = async (req, res, next) => {
-  try {
-    if (req.user.isAdmin) {
-      next();
-    } else {
-      res.status(401).json({ message: "not an admin" });
+    try {
+      if (req.user.isAdmin) {
+        next();
+      } else {
+        res.status(401).json({ message: "not an admin" });
+      }
+    } catch (error) {
+      res.status(500).json({
+        message: error.message,
+      });
     }
-  } catch (error) {
-    res.status(500).json({
-      message: error.message,
-    });
-  }
-};
-
-module.exports = {
-  authenticate,
-  isAdmin,
-};
+  };
+  
+  module.exports = {
+    authenticate,
+    isAdmin,
+  };
