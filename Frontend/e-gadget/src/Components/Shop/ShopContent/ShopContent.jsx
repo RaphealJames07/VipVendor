@@ -120,10 +120,10 @@ const ShopContent = () => {
                                 </div>
                                 <div className="ShopResultDivDownLeftPriceDiv">
                                     <div className="ShopResultDivDownLeftPriceDiv1">
-                                        <p>Prices</p>
+                                        <p>PRICES</p>
                                     </div>
                                     <div className="ShopResultDivDownLeftPriceDiv2">
-                                        <Slider range defaultValue={[20, 50]} />
+                                        <Slider range defaultValue={[0, 50]} className="Slider"/>
                                     </div>
                                     <div className="ShopResultDivDownLeftPriceDiv3">
                                         <div className="ShopResultDivDownLeftPriceDiv3Left">
