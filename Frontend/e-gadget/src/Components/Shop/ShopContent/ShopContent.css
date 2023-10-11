@@ -11,12 +11,12 @@
 
 .ShopContentBody {
   width: 100%;
-  height: 350vh;
+  height: 300vh;
 }
 
 .ShopSearchDiv {
   width: 100%;
-  height: 6%;
+  height: 7%;
   background: lightblue;
   display: flex;
   flex-direction: column;
@@ -112,7 +112,7 @@
 
 .ShopBrandDiv {
   width: 100%;
-  height: 11%;
+  height: 13%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -194,12 +194,12 @@
   height: 20%;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .ShopResultDiv {
   width: 100%;
-  height: 84%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,7 +279,7 @@
 }
 
 .ShopResultDivDownLeft {
-  width: 40%;
+  width: 30%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -438,8 +438,276 @@
 }
 
 .ShopResultDivDownLeftBrandDiv{
-  
+  width: 100%;
+  height: 30%;
+  /* background: #444; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
+.ShopResultDivDownLeftBrandDiv1{
+  width: 100%;
+  height: 10%;
+  background: #666;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.ShopResultDivDownLeftBrandDiv2{
+  width: 100%;
+  height: 10%;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  background: #eee;
+}
+.ShopResultDivDownLeftBrandDiv2 input{
+  width: 90%;
+  height: 60%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: none;
+}
+.ShopResultDivDownLeftBrandDiv2 .AiOutlineSearch{
+  width: 7%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ShopResultDivDownLeftBrandDiv3{
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ShopResultDivDownLeftBrandDiv3Item{
+  display: flex;
+  height: 50px;
+  background: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.ShopResultDivDownLeftBrandDiv3ItemA{
+  width: 10%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ShopResultDivDownLeftBrandDiv3ItemA input{
+  width: 70%;
+  height: 70%;
+}
+
+.ShopResultDivDownLeftBrandDiv3ItemB{
+  width: 60%;
+  height: 80%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.ShopResultDivDownLeftBrandDiv3ItemC{
+  width: 10%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ShopResultDivDownLeftBar3Div{
+  width: 100%;
+  height: 23%;
+  /* background: #444; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ShopResultDivDownLeftBar3Div1{
+  width: 100%;
+  height: 12%;
+  background: #666;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.ShopResultDivDownLeftBar3Div2{
+  width: 100%;
+  height: 83%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ShopResultDivDownLeftBar3Div2Item{
+  display: flex;
+  height: 50px;
+  background: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.ShopResultDivDownLeftBar3Div2ItemA{
+  width: 10%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ShopResultDivDownLeftBar3Div2ItemA input{
+  width: 70%;
+  height: 70%;
+}
+
+.ShopResultDivDownLeftBar3Div2ItemB{
+  width: 60%;
+  height: 80%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.ShopResultDivDownLeftBar3Div2ItemC{
+  width: 10%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ShopResultDivDownRight {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.ShopResultDivDownRightTop{
+  width: 100%;
+  height: 90%;
+}
+
+.ShopResultDivDownRightWrap{
+  width: 95%;
+  height: max-content;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  align-items: flex-end;
+}
+
+.ShopResultDivDownRightItem{
+  width: 300px;
+  height: 360px;
+}
+
+.ShopResultDivDownRightItemImgDiv{
+  width: 100%;
+  height: 50%;
+  background: lightblue;
+}
+
+.ShopResultDivDownRightItemDetDiv{
+  width: 100%;
+  height: 50%;
+  background: #eee;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ShopResultDivDownRightItemDetDivA{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.ShopResultDivDownRightItemDetDivB{
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.ShopResultDivDownRightItemDetDivC{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+.ShopResultDivDownRightItemDetDivC1{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.ShopResultDivDownRightItemDetDivC1 .AiFillStar{
+  width: 25px;
+  height: 25px;
+}
+.ShopResultDivDownRightItemDetDivC .AiFillHeart{
+  width: 25px;
+  height: 25px;
+  color: red;
+  cursor: pointer;
+}
+
+.ShopResultDivDownRightItemDetDivD{
+  width: 100%;
+  height: 22%;
+  display: flex;
+  align-items: center;
+}
+
+.ShopResultDivDownRightItemDetDivD button{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 3px;
+  background: #3F51B5;
+  cursor: pointer;
+  justify-content: center;
+  color: #fff;
+}
+
+.ShopResultDivDownRightPagination{
+  width: 95%;
+  height: 5%;
+  background: lightcyan;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 
 

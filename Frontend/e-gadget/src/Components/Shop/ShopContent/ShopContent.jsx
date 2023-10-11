@@ -3,13 +3,13 @@ import {MdViewList} from "react-icons/md";
 import {HiViewGrid} from "react-icons/hi";
 import "./ShopContent.css";
 import {FaFilter} from "react-icons/fa";
-import {Slider} from "antd";
+import {Pagination, Slider} from "antd";
 import {AiFillHeart, AiFillStar, AiOutlineSearch} from "react-icons/ai";
 
 const ShopContent = () => {
     return (
         <>
-            <div className="ShopContentBody">
+            <div className="ShopContentBody ">
                 <div className="ShopSearchDiv">
                     <div className="ShopSearchDivTop">
                         <input
@@ -17,7 +17,7 @@ const ShopContent = () => {
                             placeholder="Search for products, brands....."
                         />
                         <select name="All Department" id="">
-                            <option value="">All Department</option>
+                            <option value="" className="">All Department</option>
                             <option value="">Phones</option>
                             <option value="">Laptops</option>
                             <option value="">Tablets</option>
@@ -112,10 +112,12 @@ const ShopContent = () => {
                             <div className="ShopResultDivDownLeftWrap">
                                 <div className="ShopResultDivDownLeftFilterDiv">
                                     <div className="ShopResultDivDownLeftFilterDiv1">
-                                        <FaFilter className="FaFilter"/> <p>Filters</p>
+                                        <FaFilter className="FaFilter" />{" "}
+                                        <p>Filters</p>
                                     </div>
                                     <div className="ShopResultDivDownLeftFilterDiv2">
-                                        <BiReset className="BiReset"/> <p>Reset Filters</p>
+                                        <BiReset className="BiReset" />{" "}
+                                        <p>Reset Filters</p>
                                     </div>
                                 </div>
                                 <div className="ShopResultDivDownLeftPriceDiv">
@@ -123,7 +125,11 @@ const ShopContent = () => {
                                         <p>PRICES</p>
                                     </div>
                                     <div className="ShopResultDivDownLeftPriceDiv2">
-                                        <Slider range defaultValue={[0, 50]} className="Slider"/>
+                                        <Slider
+                                            range
+                                            defaultValue={[0, 50]}
+                                            className="Slider"
+                                        />
                                     </div>
                                     <div className="ShopResultDivDownLeftPriceDiv3">
                                         <div className="ShopResultDivDownLeftPriceDiv3Left">
@@ -151,8 +157,11 @@ const ShopContent = () => {
                                         <p>SHOP BY BRAND</p>
                                     </div>
                                     <div className="ShopResultDivDownLeftBrandDiv2">
-                                        <input type="text" />
-                                        <AiOutlineSearch />
+                                        <input
+                                            type="text"
+                                            placeholder="Search brands"
+                                        />
+                                        <AiOutlineSearch className="AiOutlineSearch" />
                                     </div>
                                     <div className="ShopResultDivDownLeftBrandDiv3">
                                         <div className="ShopResultDivDownLeftBrandDiv3Item">
@@ -240,11 +249,15 @@ const ShopContent = () => {
                                     </div>
                                     <div className="ShopResultDivDownLeftBar3Div2">
                                         <div className="ShopResultDivDownLeftBar3Div2Item">
-                                            <div>
+                                            <div className="ShopResultDivDownLeftBar3Div2ItemA">
                                                 <input type="checkbox" />
                                             </div>
-                                            <div>1500mAh</div>
-                                            <div>21</div>
+                                            <div className="ShopResultDivDownLeftBar3Div2ItemB">
+                                                1500mAh
+                                            </div>
+                                            <div className="ShopResultDivDownLeftBar3Div2ItemC">
+                                                21
+                                            </div>
                                         </div>
                                         <div className="ShopResultDivDownLeftBar3Div2Item">
                                             <div className="ShopResultDivDownLeftBar3Div2ItemA">
@@ -306,28 +319,287 @@ const ShopContent = () => {
                             </div>
                         </div>
                         <div className="ShopResultDivDownRight">
-                            <div className="ShopResultDivDownRightItem">
-                                <div className="ShopResultDivDownRightItemImgDiv">
-                                    <img src="" alt="" />
-                                </div>
-                                <div className="ShopResultDivDownRightItemDetDiv">
-                                    <div className="ShopResultDivDownRightItemDetDivA">
-                                        <h3>Samsung Galaxy S22 5G 128GB</h3>
-                                    </div>
-                                    <div className="ShopResultDivDownRightItemDetDivB">
-                                        N400,000
-                                    </div>
-                                    <div className="ShopResultDivDownRightItemDetDivC">
-                                        <div className="ShopResultDivDownRightItemDetDivC1">
-                                            <AiFillStar />
-                                            <span>30 reviews</span>
+                            <div className="ShopResultDivDownRightTop">
+                                <div className="ShopResultDivDownRightWrap">
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
                                         </div>
-                                        <AiFillHeart />
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="ShopResultDivDownRightItemDetDivD">
-                                        <button>Add to Cart</button>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ShopResultDivDownRightItem">
+                                        <div className="ShopResultDivDownRightItemImgDiv">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div className="ShopResultDivDownRightItemDetDiv">
+                                            <div className="ShopResultDivDownRightItemDetDivA">
+                                                <p>
+                                                    Samsung Galaxy S22 5G 128GB
+                                                </p>
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivB">
+                                                N400,000
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivC">
+                                                <div className="ShopResultDivDownRightItemDetDivC1">
+                                                    <AiFillStar className="AiFillStar" />
+                                                    <span>30 reviews</span>
+                                                </div>
+                                                <AiFillHeart className="AiFillHeart" />
+                                            </div>
+                                            <div className="ShopResultDivDownRightItemDetDivD">
+                                                <button>Add to Cart</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div className="ShopResultDivDownRightPagination">
+                            <Pagination defaultCurrent={1} total={50} />
                             </div>
                         </div>
                     </div>

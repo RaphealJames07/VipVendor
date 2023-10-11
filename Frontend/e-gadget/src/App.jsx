@@ -11,6 +11,7 @@ import Shop from "./Components/Shop/Shop";
 import About from './Components/About/About'
 import Contact from './Components/Contact/Contact'
 import Blog from './Components/Blog/Blog'
+import Cart from "./Components/Cart/Cart";
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
                         <Route path="/About" element={<About/>} />
                         <Route path="/Contact" element={<Contact/>} />
                         <Route path="/Blog" element={<Blog/>} />
+                        <Route path="/Cart" element={<Cart/>} />
                     </Routes>
                 </div>
             </HashRouter>

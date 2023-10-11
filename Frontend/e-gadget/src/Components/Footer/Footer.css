@@ -171,7 +171,7 @@
   width: 40%;
   height: 100%;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
@@ -186,7 +186,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   color: #fff;
   font-size: 18px;
 }
