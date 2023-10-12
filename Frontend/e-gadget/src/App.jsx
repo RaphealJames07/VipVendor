@@ -12,6 +12,7 @@ import About from './Components/About/About'
 import Contact from './Components/Contact/Contact'
 import Blog from './Components/Blog/Blog'
 import Cart from "./Components/Cart/Cart";
+import ProductDetail from "./Components/ProductDetail/ProductDetail";
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
                         <Route path="/Contact" element={<Contact/>} />
                         <Route path="/Blog" element={<Blog/>} />
                         <Route path="/Cart" element={<Cart/>} />
+                        <Route path="/ProductDetail" element={<ProductDetail/>} />
                     </Routes>
                 </div>
             </HashRouter>

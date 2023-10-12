@@ -11,7 +11,11 @@
 export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
-        extend: {},
+        extend: {
+          colors: {
+            pry: "#3F51B5",
+          }
+        },
         screens: {
           'ph' : {'max':'480px'},
           'tb' : '1024px',
