@@ -17,14 +17,14 @@ const ProductDetail = () => {
                             Camera Drone
                         </p>
                     </div>
-                    <div className="w-full h-[93%] bg-slate-200 flex justify-center">
+                    <div className="w-full h-[93%] bg-slate-100 flex justify-center">
                         <div className="w-[90%] h-full flex flex-col justify-between">
                             <div className="w-full h-[35%] flex justify-between">
-                                <div className="w-[48%] h-full  ">
+                                <div className="w-[48%] h-full gap-6 flex flex-col">
                                     <div className="w-full h-[75%] bg-red-50">
                                         <img src="" alt="" />
                                     </div>
-                                    <div className="w-full h-[25%] flex justify-between bg-black">
+                                    <div className="w-full h-[25%] flex justify-between ">
                                         <div className="w-[30%] h-full bg-white">
                                             <img src="" alt="" />
                                         </div>
@@ -36,7 +36,7 @@ const ProductDetail = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="w-[48%] h-full bg-red-200 flex flex-col justify-between py-3">
+                                <div className="w-[48%] h-full  flex flex-col justify-between py-3">
                                     <h1 className="font-semibold text-2xl">
                                         Air 22 Camera Drone
                                     </h1>
@@ -122,26 +122,126 @@ const ProductDetail = () => {
                                 </div>
                             </div>
                             <div className="w-full flex flex-col justify-between h-[35%] ">
-                                <div className="flex w-full h-[17%] justify-between items-center bg-white">
+                                <div className="flex w-full h-[17%] justify-between items-center ">
                                     <p>You may also like</p>
                                     <p>View all {`>>>`}</p>
                                 </div>
-                                <div className="h-[75%] w-full ">
-                                    <div className="w-52 h-60 ">
-                                        <div className="w-full h-[60%] bg-green-100">
+                                <div className="h-[75%] w-full flex gap-6">
+                                    <div className="w-52 h-60 border-2 border-gray-400 p-2 cursor-pointer">
+                                        <div className="w-full h-[60%] bg-green-100 ">
                                             <img src="" alt="" />
                                         </div>
                                         <div>
-                                            <p>Camera Drone mini 2</p>
-                                            <p>
+                                            <p className="text-lg">Camera Drone mini 2</p>
+                                            <p className="text-lg text-pry flex justify-between">
                                                 N200,000{" "}
-                                                <span>
+                                                <span className="text-red-500">
                                                     <AiFillHeart />
                                                 </span>
                                             </p>
-                                            <p>
+                                            <p className="gap-2">
                                                 <span>
-                                                    <AiFillStar />
+                                                    <AiFillStar className="text-yellow-500"/>
+                                                </span>
+                                                4.5 (10) reviews{" "}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="w-52 h-60 border-2 border-gray-400 p-2 cursor-pointer">
+                                        <div className="w-full h-[60%] bg-green-100 ">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div>
+                                            <p className="text-lg">Camera Drone mini 2</p>
+                                            <p className="text-lg text-pry flex justify-between">
+                                                N200,000{" "}
+                                                <span className="text-red-500">
+                                                    <AiFillHeart />
+                                                </span>
+                                            </p>
+                                            <p className="gap-2">
+                                                <span>
+                                                    <AiFillStar className="text-yellow-500"/>
+                                                </span>
+                                                4.5 (10) reviews{" "}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="w-52 h-60 border-2 border-gray-400 p-2 cursor-pointer">
+                                        <div className="w-full h-[60%] bg-green-100 ">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div>
+                                            <p className="text-lg">Camera Drone mini 2</p>
+                                            <p className="text-lg text-pry flex justify-between">
+                                                N200,000{" "}
+                                                <span className="text-red-500">
+                                                    <AiFillHeart />
+                                                </span>
+                                            </p>
+                                            <p className="gap-2">
+                                                <span>
+                                                    <AiFillStar className="text-yellow-500"/>
+                                                </span>
+                                                4.5 (10) reviews{" "}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="w-52 h-60 border-2 border-gray-400 p-2 cursor-pointer">
+                                        <div className="w-full h-[60%] bg-green-100 ">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div>
+                                            <p className="text-lg">Camera Drone mini 2</p>
+                                            <p className="text-lg text-pry flex justify-between">
+                                                N200,000{" "}
+                                                <span className="text-red-500">
+                                                    <AiFillHeart />
+                                                </span>
+                                            </p>
+                                            <p className="gap-2">
+                                                <span>
+                                                    <AiFillStar className="text-yellow-500"/>
+                                                </span>
+                                                4.5 (10) reviews{" "}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="w-52 h-60 border-2 border-gray-400 p-2 cursor-pointer">
+                                        <div className="w-full h-[60%] bg-green-100 ">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div>
+                                            <p className="text-lg">Camera Drone mini 2</p>
+                                            <p className="text-lg text-pry flex justify-between">
+                                                N200,000{" "}
+                                                <span className="text-red-500">
+                                                    <AiFillHeart />
+                                                </span>
+                                            </p>
+                                            <p className="gap-2">
+                                                <span>
+                                                    <AiFillStar className="text-yellow-500"/>
+                                                </span>
+                                                4.5 (10) reviews{" "}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="w-52 h-60 border-2 border-gray-400 p-2 cursor-pointer">
+                                        <div className="w-full h-[60%] bg-green-100 ">
+                                            <img src="" alt="" />
+                                        </div>
+                                        <div>
+                                            <p className="text-lg">Camera Drone mini 2</p>
+                                            <p className="text-lg text-pry flex justify-between">
+                                                N200,000{" "}
+                                                <span className="text-red-500">
+                                                    <AiFillHeart />
+                                                </span>
+                                            </p>
+                                            <p className="gap-2">
+                                                <span>
+                                                    <AiFillStar className="text-yellow-500"/>
                                                 </span>
                                                 4.5 (10) reviews{" "}
                                             </p>
