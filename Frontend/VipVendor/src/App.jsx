@@ -13,6 +13,7 @@ import Contact from './Components/Contact/Contact'
 import Blog from './Components/Blog/Blog'
 import Cart from "./Components/Cart/Cart";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
+import Profile from "./Components/Profile/Profile";
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
                         <Route path="/Blog" element={<Blog/>} />
                         <Route path="/Cart" element={<Cart/>} />
                         <Route path="/ProductDetail" element={<ProductDetail/>} />
+                        <Route path="/Profile" element={<Profile/>} />
                     </Routes>
                 </div>
             </HashRouter>
