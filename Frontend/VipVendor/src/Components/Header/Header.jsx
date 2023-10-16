@@ -29,6 +29,9 @@ const Header = () => {
     const navToCart = () => {
         nav("/Cart");
     };
+    const navToProfile = () => {
+        nav("/Profile");
+    };
 
      // State to control the visibility of the mobile menu
      const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
@@ -137,7 +140,7 @@ const Header = () => {
                             <AiOutlineSearch className="w-6 h-6 ph:w-28 ph:h-28 cursor-pointer" />
                         </div>
                         <div className="w-[25%] h-full ph:w-[23%]  ph:h-10 flex items-center justify-center">
-                            <BiSolidUserCircle className="w-6 h-6 ph:w-28 ph:h-28  cursor-pointer" />
+                            <BiSolidUserCircle className="w-6 h-6 ph:w-28 ph:h-28  cursor-pointer" onClick={navToProfile} />
                         </div>
                         <div className="w-[25%] h-full ph:w-[23%]  ph:h-10 flex items-center justify-center">
                             <FaShoppingCart
