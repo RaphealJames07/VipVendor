@@ -8,7 +8,7 @@ import {AiFillHeart} from "react-icons/ai";
 const ProfileContent = () => {
     return (
         <>
-            <div className="w-full h-[25%] flex flex-col items-center gap-3 ">
+            <div className="w-full h-[30vh] flex flex-col items-center gap-3 ">
                 <div className="w-44 h-44 bg-red-500 rounded-full relative">
                     <img
                         src={profilePic}
@@ -23,7 +23,7 @@ const ProfileContent = () => {
                     Welcome,<span> John Doe</span>
                 </div>
             </div>
-            <div className="w-full h-[35%] flex flex-col justify-between">
+            <div className="w-full h-[50vh] flex flex-col justify-between">
                 <div className="w-full h-[45%] bg-white flex justify-between">
                     <div className="w-[48%] h-full flex justify-between border-x-2 border-y-2 border-black rounded cursor-pointer">
                         <div className="w-[75%] h-full flex flex-col justify-around py-5 px-6">
@@ -88,7 +88,7 @@ const ProfileContent = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full h-[30%] flex justify-around items-center flex-col border-x-2 border-y-2 rounded-md border-black py-5">
+            <div className="w-full h-[40vh] flex justify-around items-center flex-col border-x-2 border-y-2 rounded-md border-black py-5">
                 <div className="w-full h-[40%] flex flex-col items-center justify-around  py-2">
                     <h1 className="text-3xl font-semibold">Need more help?</h1>
                     <p>Try these next steps</p>
@@ -105,7 +105,7 @@ const ProfileContent = () => {
                     </div>
                 </div>
             </div>
-            <p>
+            <p className="w-full h-20">
                 To ensure privacy and security, only you can see your settings,
                 review and manage your data.{" "}
                 <span className="text-pry cursor-pointer">Learn more</span>
