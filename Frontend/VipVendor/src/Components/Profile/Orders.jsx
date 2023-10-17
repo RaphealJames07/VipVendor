@@ -2,7 +2,9 @@
 const Orders = () => {
   return (
       <>
-          <div></div>
+          <div>
+            Orders
+          </div>
       </>
   );
 }
