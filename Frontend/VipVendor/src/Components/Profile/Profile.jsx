@@ -70,9 +70,9 @@ const Profile = () => {
                             <span className="text-[#3F51B5] cursor-pointer" onClick={setProfile}>Profile</span>
                         </p>
                     </div>
-                    <div className="w-full h-[150vh] flex justify-between">
+                    <div className="w-full h-max flex justify-between">
                         <div className="w-[30%] h-[40%] bg-slate-100 flex justify-center py-8">
-                            <ul className="w-[80%] h-[70%] flex flex-col gap-4">
+                            <ul className="w-[80%] h-[60vh] flex flex-col gap-4">
                                 <li className="w-full h-12 flex items-center text-xl gap-6 cursor-pointer" onClick={setAccount}>
                                     <HiMiniUser className="text-2xl" />
                                     <span>My Account</span>
@@ -96,7 +96,7 @@ const Profile = () => {
                             </ul>
                         </div>
                         <div className="w-[66%] h-[100%] ">
-                           <div className="w-full h-full py-10 flex gap-10 flex-col">
+                           <div className="w-full h-max  flex gap-10 flex-col">
                             {
                               myProfile ? <ProfileContent/> : myAccount ? <Account/> : myOrders ? <Orders/> : myPayment? <Payments/> : mySaved ? <Saved/> : null
                             }
