@@ -62,7 +62,7 @@ const Profile = () => {
         <>
             <div className="w-full h-max">
                 <Header />
-                <div className="w-full h-max px-20">
+                <div className="w-full h-max px-20 my-5">
                     <div className="w-full h-20 flex items-center">
                         <BiArrowBack className="mr-6 text-2xl" />
                         <p>
@@ -96,7 +96,7 @@ const Profile = () => {
                             </ul>
                         </div>
                         <div className="w-[66%] h-[100%] ">
-                           <div className="w-full h-max  flex gap-10 flex-col">
+                           <div className="w-full h-max flex gap-10 flex-col">
                             {
                               myProfile ? <ProfileContent/> : myAccount ? <Account/> : myOrders ? <Orders/> : myPayment? <Payments/> : mySaved ? <Saved/> : null
                             }
