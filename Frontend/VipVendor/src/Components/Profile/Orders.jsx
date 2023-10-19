@@ -1,7 +1,12 @@
 import Iphone from '../../assets/iphone12.png'
+import { useNavigate } from 'react-router';
 
 
 const Orders = () => {
+    const nav = useNavigate()
+    const handleViewMoreOrder = () =>{
+        nav('/OrderDetail')
+    }
   return (
       <>
           <div className="w-full h-[100vh]">
@@ -28,7 +33,7 @@ const Orders = () => {
                   </ul>
               </div>
               <div className="w-full h-[85%] flex flex-col gap-5">
-                  <div className="w-full h-32 bg-slate-50 p-2 flex justify-between cursor-pointer">
+                  <div className="w-full h-32 bg-slate-50 p-2 flex justify-between cursor-pointer" onClick={handleViewMoreOrder}>
                       <div className="w-[20%] h-full bg-red-100">
                           <img src={Iphone} alt="" className='w-full h-full object-contain' />
                       </div>

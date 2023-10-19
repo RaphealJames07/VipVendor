@@ -14,6 +14,7 @@ import Blog from './Components/Blog/Blog'
 import Cart from "./Components/Cart/Cart";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
 import Profile from "./Components/Profile/Profile";
+import OrderDetail from "./Components/Profile/OrderDetail";
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
                         <Route path="/Cart" element={<Cart/>} />
                         <Route path="/ProductDetail" element={<ProductDetail/>} />
                         <Route path="/Profile" element={<Profile/>} />
+                        <Route path="/OrderDetail" element={<OrderDetail/>} />
                     </Routes>
                 </div>
             </HashRouter>
