@@ -14,6 +14,9 @@ export default {
         extend: {
           colors: {
             pry: "#3F51B5",
+          },
+          transitionProperty: {
+            oneTransition: 'max-height 0.7s ease-in-out'
           }
         },
         screens: {
@@ -21,7 +24,8 @@ export default {
           'tb' : '1024px',
           'dk' : '1280px',
           'smph': '351px'
-        }
+        },
+        
     },
     plugins: [],
 };

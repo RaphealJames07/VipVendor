@@ -57,14 +57,14 @@ const AuthPage = () => {
                             </div>
                             <div
                                 className={`LoginContentDown ${
-                                    login ? "" : "hidden"
+                                    login ? "" : "lgnhidden"
                                 }`}
                             >
                                 <Login />
                             </div>
                             <div
                                 className={`SignUpContentDown ${
-                                    signUp ? "" : "hidden"
+                                    signUp ? "" : "sgnhidden"
                                 }`}
                             >
                                 <SignUp />

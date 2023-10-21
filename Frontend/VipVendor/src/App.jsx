@@ -16,6 +16,8 @@ import ProductDetail from "./Components/ProductDetail/ProductDetail";
 import Profile from "./Components/Profile/Profile";
 import OrderDetail from "./Components/Profile/OrderDetail";
 
+// import EmptyCart from "./Components/Cart/EmptyCart";
+
 
 const App = () => {
     return (
