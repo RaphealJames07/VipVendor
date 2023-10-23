@@ -15,6 +15,9 @@ import Cart from "./Components/Cart/Cart";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
 import Profile from "./Components/Profile/Profile";
 import OrderDetail from "./Components/Profile/OrderDetail";
+import Checkout from "./Components/Checkout/Checkout";
+import PaySucces from "./Components/Checkout/PaySucces";
+import Payfailed from "./Components/Checkout/Payfailed";
 
 // import EmptyCart from "./Components/Cart/EmptyCart";
 
@@ -40,6 +43,9 @@ const App = () => {
                         <Route path="/ProductDetail" element={<ProductDetail/>} />
                         <Route path="/Profile" element={<Profile/>} />
                         <Route path="/OrderDetail" element={<OrderDetail/>} />
+                        <Route path="/Ckeckout" element={<Checkout/>} />
+                        <Route path="/PaymentSuccess" element={<PaySucces/>} />
+                        <Route path="/PaymentFailed" element={<Payfailed/>} />
                     </Routes>
                 </div>
             </HashRouter>
