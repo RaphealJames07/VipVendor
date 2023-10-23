@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
+    "@lordicon/react": "^1.1.0",
     "@reduxjs/toolkit": "^1.9.5",
     "antd": "^5.9.0",
     "autoprefixer": "^10.4.16",
