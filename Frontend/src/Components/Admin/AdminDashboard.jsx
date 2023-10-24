@@ -39,7 +39,7 @@ const AdminDashboard = () => {
         setAdminSettings(false);
     };
     const handleShowProducts = () => {
-        setAdminHome(true);
+        setAdminHome(false);
         setAdminOrder(false);
         setAdminProducts(true);
         setAdminUsers(false);
@@ -165,7 +165,7 @@ const AdminDashboard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full h-[89%] bg-indigo-200">
+                    <div className="w-full h-[89%] bg-grey-200">
                       {
                         adminHome? <AdminHome/> : adminOrder ? <AdminOrder/> : adminProducts ? <AdminProducts/> : adminUsers? <AdminUsers/> : adminReports ? <AdminProducts/> : adminSettings? <AdminSettings/> : null 
                       }
