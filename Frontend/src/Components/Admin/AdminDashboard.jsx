@@ -39,7 +39,7 @@ const AdminDashboard = () => {
         setAdminSettings(false);
     };
     const handleShowProducts = () => {
-        setAdminHome(true);
+        setAdminHome(false);
         setAdminOrder(false);
         setAdminProducts(true);
         setAdminUsers(false);
