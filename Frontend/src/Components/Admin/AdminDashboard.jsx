@@ -13,6 +13,7 @@ import AdminOrder from "./AdminOrder";
 import AdminProducts from "./AdminProducts";
 import AdminUsers from "./AdminUsers";
 import AdminSettings from "./AdminSettings";
+import AdminReports from "./AdminReports";
 
 const AdminDashboard = () => {
     const [adminHome, setAdminHome] = useState(true);
@@ -167,7 +168,7 @@ const AdminDashboard = () => {
                     </div>
                     <div className="w-full h-[89%] bg-grey-200">
                       {
-                        adminHome? <AdminHome/> : adminOrder ? <AdminOrder/> : adminProducts ? <AdminProducts/> : adminUsers? <AdminUsers/> : adminReports ? <AdminProducts/> : adminSettings? <AdminSettings/> : null 
+                        adminHome? <AdminHome/> : adminOrder ? <AdminOrder/> : adminProducts ? <AdminProducts/> : adminUsers? <AdminUsers/> : adminReports ? <AdminReports/> : adminSettings? <AdminSettings/> : null 
                       }
                     </div>
                 </div>
