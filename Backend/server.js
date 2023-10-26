@@ -1,15 +1,23 @@
-require("./database/database");
-const express = require("express");
-const morgan = require("morgan");
+
+require('./database/database')
+const express = require('express');
+const morgan = require('morgan');
+const userRouter = require('./routes/userRouter');
+const cors = require('cors');
+
 const fileupload = require("express-fileupload");
-const userRouter = require("./routes/userRouter");
+
 const productRouter = require("./routes/productRouter");
+
 
 const PORT = process.env.PORT || 4040;
 
 const app = express();
 
-app.use(morgan("dev"));
+
+app.use(cors({origin: "*"}));
+app.use(morgan('dev'))
+
 app.use(express.json());
 app.use(
   fileupload({
