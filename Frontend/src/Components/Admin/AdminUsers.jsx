@@ -42,7 +42,7 @@ const AdminUsers = () => {
                         </div>
                     </div>
                     <div className="w-full h-[87%] bg-orange-50">
-                        <div className="w-full h-16 bg-amber-600 flex justify-between items-center px-5">
+                        <div className="w-full h-16 bg-amber-600  border-b border-blue-950 flex justify-between items-center px-5">
                             <div className="w-80 h-12 flex items-center gap-3">
                                 <img
                                     src=""
@@ -91,7 +91,7 @@ const AdminUsers = () => {
                                 ) : null}
                             </div>
                         </div>
-                        <div className="w-full h-16 bg-amber-600 flex justify-between items-center px-5">
+                        <div className="w-full h-16 bg-amber-600 border-b border-blue-950 flex justify-between items-center px-5">
                             <div className="w-80 h-12 flex items-center gap-3">
                                 <img
                                     src=""
@@ -117,7 +117,7 @@ const AdminUsers = () => {
                                 <MdOutlineMoreVert />
                             </div>
                         </div>
-                        <div className="w-full h-16 bg-amber-600 flex justify-between items-center px-5">
+                        <div className="w-full h-16 bg-amber-600 border-b border-blue-950 flex justify-between items-center px-5">
                             <div className="w-80 h-12 flex items-center gap-3">
                                 <img
                                     src=""
@@ -143,7 +143,7 @@ const AdminUsers = () => {
                                 <MdOutlineMoreVert />
                             </div>
                         </div>
-                        <div className="w-full h-16 bg-amber-600 flex justify-between items-center px-5">
+                        <div className="w-full h-16 bg-amber-600 border-b border-blue-950 flex justify-between items-center px-5">
                             <div className="w-80 h-12 flex items-center gap-3">
                                 <img
                                     src=""
@@ -169,7 +169,7 @@ const AdminUsers = () => {
                                 <MdOutlineMoreVert />
                             </div>
                         </div>
-                        <div className="w-full h-16 bg-amber-600 flex justify-between items-center px-5">
+                        <div className="w-full h-16 bg-amber-600 border-b border-blue-950 flex justify-between items-center px-5">
                             <div className="w-80 h-12 flex items-center gap-3">
                                 <img
                                     src=""
@@ -195,7 +195,7 @@ const AdminUsers = () => {
                                 <MdOutlineMoreVert />
                             </div>
                         </div>
-                        <div className="w-full h-16 bg-amber-600 flex justify-between items-center px-5">
+                        <div className="w-full h-16 bg-amber-600 border-b border-blue-950 flex justify-between items-center px-5">
                             <div className="w-80 h-12 flex items-center gap-3">
                                 <img
                                     src=""
@@ -221,7 +221,7 @@ const AdminUsers = () => {
                                 <MdOutlineMoreVert />
                             </div>
                         </div>
-                        <div className="w-full h-16 bg-amber-600 flex justify-between items-center px-5">
+                        <div className="w-full h-16 bg-amber-600 border-b border-blue-950 flex justify-between items-center px-5">
                             <div className="w-80 h-12 flex items-center gap-3">
                                 <img
                                     src=""
