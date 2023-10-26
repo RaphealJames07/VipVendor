@@ -71,7 +71,7 @@ const AdminUsers = () => {
                                 />
                                 {showAction ? (
                                     <>
-                                        <div className="w-40 h-40 rounded-sm absolute top-10 right-5 bg-slate-300">
+                                        <div className="w-40 h-40 rounded-md absolute top-10 right-5 bg-slate-100 p-1">
                                             <ul className="w-full h-full flex flex-col">
                                                 <li className="w-full h-10 bg-slate-100 flex items-center justify-center cursor-pointer border-b border-black">
                                                     Make Admin
