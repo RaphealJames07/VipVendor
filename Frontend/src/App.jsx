@@ -19,6 +19,9 @@ import Checkout from "./Components/Checkout/Checkout";
 import PaySucces from "./Components/Checkout/PaySucces";
 import Payfailed from "./Components/Checkout/Payfailed";
 import AdminDashboard from "./Components/Admin/AdminDashboard";
+import DriverDashboard from "./Components/Driver/DriverDashboard";
+import Order from "./Components/Driver/Order";
+import GetOneOrder from "./Components/Driver/GetOneOrder";
 
 // import EmptyCart from "./Components/Cart/EmptyCart";
 
@@ -48,6 +51,9 @@ const App = () => {
                         <Route path="/PaymentSuccess" element={<PaySucces/>} />
                         <Route path="/PaymentFailed" element={<Payfailed/>} />
                         <Route path="/AdminDashboard" element={<AdminDashboard/>} />
+                        <Route path="/DriverDashboard" element={<DriverDashboard/>} />
+                        <Route path="/order" element={<Order/>} />
+                        <Route path="/order/:id" element={<GetOneOrder/>} />
                     </Routes>
                 </div>
             </HashRouter>
