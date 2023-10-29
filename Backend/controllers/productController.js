@@ -4,6 +4,7 @@ const { getCurrentDateTime } = require("../utils/currentDate");
 
 const newProduct = async (req, res) => {
   try {
+    console.log("got here");
     const {
       productName,
       description,
@@ -23,19 +24,36 @@ const newProduct = async (req, res) => {
       color,
     });
     if (req.files) {
+      console.log("got here two");
       let images = [];
       if (req.files.images.length > 1) {
         for (let index = 0; index < req.files.images.length; index++) {
-          const result = await cloudinary.uploader.upload(
-            req.files.images[index].tempFilePath
-          );
-          images.push(result.secure_url);
+          try {
+            const result = await cloudinary.uploader.upload(
+              req.files.images[index].tempFilePath
+            );
+            images.push(result.secure_url);
+          } catch (cloudinaryError) {
+            // Handle Cloudinary error
+            console.error("Cloudinary error:", cloudinaryError.message);
+            // Rollback the created product if there's an error
+            await productModel.deleteOne({ _id: newProduct._id });
+            throw cloudinaryError; // Re-throw the Cloudinary error
+          }
         }
       } else {
-        const result = await cloudinary.uploader.upload(
-          req.files.images.tempFilePath
-        );
-        images.push(result.secure_url);
+        try {
+          const result = await cloudinary.uploader.upload(
+            req.files.images.tempFilePath
+          );
+          images.push(result.secure_url);
+        } catch (cloudinaryError) {
+          // Handle Cloudinary error
+          console.error("Cloudinary error:", cloudinaryError.message);
+          // Rollback the created product if there's an error
+          await productModel.deleteOne({ _id: newProduct._id });
+          throw cloudinaryError; // Re-throw the Cloudinary error
+        }
       }
       newProduct.images = images;
       await newProduct.save();
@@ -46,8 +64,9 @@ const newProduct = async (req, res) => {
       product,
     });
   } catch (error) {
+    console.error("Server error:", error.message);
     res.status(500).json({
-      message: error.message,
+      message: error.message || "Internal Server Error",
     });
   }
 };
