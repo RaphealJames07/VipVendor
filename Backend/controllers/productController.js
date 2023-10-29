@@ -4,7 +4,6 @@ const { getCurrentDateTime } = require("../utils/currentDate");
 
 const newProduct = async (req, res) => {
   try {
-    console.log("got here");
     const {
       productName,
       description,
@@ -24,7 +23,6 @@ const newProduct = async (req, res) => {
       color,
     });
     if (req.files) {
-      console.log("got here two");
       let images = [];
       if (req.files.images.length > 1) {
         for (let index = 0; index < req.files.images.length; index++) {
