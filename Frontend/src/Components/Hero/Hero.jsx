@@ -5,10 +5,10 @@ const Hero = () => {
         <>
             <div className="w-full h-[80vh] bg-cover bg-no-repeat flex justify-center HeroBody ">
                 <div className="h-full flex flex-col w-[90%]">
-                    <div className="w-[50%] flex items-end h-[90%]">
-                        <div className="w-full h-[70%]">
-                            <h1 className="w-full text-white">Find your best Gadgets</h1>
-                            <p className="w-[60%] h-[20%] text-white">
+                    <div className="w-[50%] flex items-end h-[90%] ph:w-full">
+                        <div className="w-full h-[70%] flex flex-col gap-5">
+                            <h1 className="w-full text-white text-4xl font-semibold">Find your best Gadgets</h1>
+                            <p className="w-[60%] h-[20%] text-white ph:w-full">
                                 Let us help you choose you latest trends of
                                 gadgets and devices, seamless experience and
                                 quality assured gadgets

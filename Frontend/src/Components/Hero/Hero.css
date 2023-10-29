@@ -93,7 +93,7 @@
 
 /* Media Query Styling for Mobile Device */
 
-@media only screen and (max-width: 450px) {
+@media only screen and (min-width: 450px) {
 
   * {
     margin: 0;
@@ -101,6 +101,67 @@
     box-sizing: border-box;
   }
 
+  .HeroBody{
+    background-image: url(../../assets/bg1.jpg);
+  
+  }
+  
+  .HeroWrap{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+  }
+  
+  .HeroContent{
+    width: 50%;
+    height: 90%;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .HeroContent .HeroContentWrap{
+    width: 100%;
+    height: 70%;
+  }
+  
+  .HeroContent .HeroContentWrap h1{
+    width: 100%;
+    height: 20%;
+    color: #fff;
+  }
+  .HeroContent .HeroContentWrap p{
+    width: 60%;
+    height: 20%;
+    color: #fff;
+  }
+  .HeroContent .HeroContentWrap button{
+    width: 150px;
+    height: 45px;
+    background: #000;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .HeroSelectImg{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .HeroSelectImg span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background: #dbdbdb;
+    cursor: pointer;
+  }
 
 }
 
@@ -117,6 +178,66 @@
   box-sizing: border-box;
 }
 
+.HeroBody{
+  background-image: url(../../assets/bg1.jpg);
+
+}
+
+.HeroWrap{
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.HeroContent{
+  width: 50%;
+  height: 90%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.HeroContent .HeroContentWrap{
+  width: 100%;
+  height: 70%;
+}
+
+.HeroContent .HeroContentWrap h1{
+  width: 100%;
+  height: 20%;
+  color: #fff;
+}
+.HeroContent .HeroContentWrap p{
+  width: 60%;
+  height: 20%;
+  color: #fff;
+}
+.HeroContent .HeroContentWrap button{
+  width: 150px;
+  height: 45px;
+  background: #3F51B5;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.HeroSelectImg{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.HeroSelectImg span{
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background: #dbdbdb;
+  cursor: pointer;
+}
 
 }
 
