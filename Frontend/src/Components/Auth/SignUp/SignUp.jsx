@@ -56,8 +56,6 @@ const SignUp = () => {
 
     const handleInputChange = (e, inputType) => {
         const inputValue = e.target.value;
-
-        // Reset error styles when input value changes
         setErrMsg((prevState) => ({
             ...prevState,
             error: false,

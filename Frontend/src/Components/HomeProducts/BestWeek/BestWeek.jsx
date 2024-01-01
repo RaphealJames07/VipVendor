@@ -1,116 +1,125 @@
-import "./BestWeek.css";
-import {AiOutlineShoppingCart} from "react-icons/ai";
+import pad from "../../../assets/pad1.png";
+import iphone12 from "../../../assets/iphone12.png";
+import watch from "../../../assets/AppleWatch.png";
 import airpod from "../../../assets/airpods1.png";
-import earphone from "../../../assets/earphone1.png";
-import macbook from "../../../assets/macbook1.png";
-import {useState} from "react";
+import {AiFillHeart, AiFillStar, AiOutlineHeart} from "react-icons/ai";
+import "../Recommended/Recommended.css";
 
 const BestWeek = () => {
-    const [showCart, setShowCart] = useState(false);
+    
 
-    const handleShowCart = () => {
-        setShowCart(!showCart);
-    };
+   
 
     return (
         <>
-            <div className="BestWeekBody">
-                <div className="BestWeekBodyTop">
-                    <p>Best Deals of the Week</p>
+            <div className="RecommendBody">
+                <div className="RecommendTop">
+                    <p>Recommended For You</p>
                     <p>View All {">>"}</p>
                 </div>
-                <div className="BestWeekBodyDown">
-                    <div className="BestWeekBodyDownWrap">
-                        <div
-                            className="BestWeekItem1"
-                            onMouseEnter={handleShowCart}
-                            onMouseLeave={handleShowCart}
-                        >
-                            <div className="BestWeekItem1ImgDiv">
+                <div className="RecommendDown">
+                    <div className="RecommendDownWrap">
+                        <div className="RecommendDownItem1">
+                            <div className="RecommendDownImgDiv">
+                                <img src={pad} alt="" />
+                            </div>
+                            <div className="RecommendDownDetDiv">
+                                <div className="RecommendDownDetDivName">
+                                    <p>Wireless Pc gaming pad</p>
+                                </div>
+                                <div className="RecommendDownDetDivPrice">
+                                    <p>N25,000</p>
+                                </div>
+                                <div className="RecommendDownDetDivRate">
+                                    <div className="RecommendDownDetDivRate1">
+                                        <AiFillStar className="AiOutlineStar"/>
+                                        3.0 <span>(15 Reviews)</span>
+                                    </div>
+                                    <div className="RecommendDownDetDivRate2">
+                                        <AiOutlineHeart className="AiOutlineHeart"/>
+                                    </div>
+                                </div>
+                                <div className="RecommendDownDetDivBtnDiv">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="RecommendDownItem1">
+                            <div className="RecommendDownImgDiv">
+                                <img src={iphone12} alt="" />
+                            </div>
+                            <div className="RecommendDownDetDiv">
+                                <div className="RecommendDownDetDivName">
+                                    <p>Wireless Pc gaming pad</p>
+                                </div>
+                                <div className="RecommendDownDetDivPrice">
+                                    <p>N25,000</p>
+                                </div>
+                                <div className="RecommendDownDetDivRate">
+                                    <div className="RecommendDownDetDivRate1">
+                                        <AiFillStar className="AiOutlineStar"/>
+                                        3.0 <span>(15 Reviews)</span>
+                                    </div>
+                                    <div className="RecommendDownDetDivRate2">
+                                        <AiFillHeart className="AiFillHeart"/>
+                                    </div>
+                                </div>
+                                <div className="RecommendDownDetDivBtnDiv">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="RecommendDownItem1">
+                            <div className="RecommendDownImgDiv">
+                                <img src={watch} alt="" />
+                            </div>
+                            <div className="RecommendDownDetDiv">
+                                <div className="RecommendDownDetDivName">
+                                    <p>Wireless Pc gaming pad</p>
+                                </div>
+                                <div className="RecommendDownDetDivPrice">
+                                    <p>N25,000</p>
+                                </div>
+                                <div className="RecommendDownDetDivRate">
+                                    <div className="RecommendDownDetDivRate1">
+                                        <AiFillStar className="AiOutlineStar"/>
+                                        3.0 <span>(15 Reviews)</span>
+                                    </div>
+                                    <div className="RecommendDownDetDivRate2">
+                                        <AiOutlineHeart className="AiOutlineHeart"/>
+                                    </div>
+                                </div>
+                                <div className="RecommendDownDetDivBtnDiv">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="RecommendDownItem1">
+                            <div className="RecommendDownImgDiv">
                                 <img src={airpod} alt="" />
-                                {showCart ? (
-                                    <>
-                                        <span>
-                                            <AiOutlineShoppingCart />
-                                        </span>
-                                    </>
-                                ) : null}
                             </div>
-                            <div className="BestWeekItem1DetailDiv">
-                                <h3>Apple Airpod Pro</h3>
-                                <p>
-                                    N65,000 <span>N80,000</span>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            className="BestWeekItem1"
-                            onMouseEnter={handleShowCart}
-                            onMouseLeave={handleShowCart}
-                        >
-                            <div className="BestWeekItem1ImgDiv">
-                                <img src={earphone} alt="" />
-                                {showCart ? (
-                                    <>
-                                        <span>
-                                            <AiOutlineShoppingCart />
-                                        </span>
-                                    </>
-                                ) : null}
-                            </div>
-                            <div className="BestWeekItem1DetailDiv">
-                                <h3>Wireless PC Headset</h3>
-                                <p>
-                                    N50,000 <span>N75,000</span>
-                                </p>
+                            <div className="RecommendDownDetDiv">
+                                <div className="RecommendDownDetDivName">
+                                    <p>Wireless Pc gaming pad</p>
+                                </div>
+                                <div className="RecommendDownDetDivPrice">
+                                    <p>N25,000</p>
+                                </div>
+                                <div className="RecommendDownDetDivRate">
+                                    <div className="RecommendDownDetDivRate1">
+                                        <AiFillStar className="AiOutlineStar"/>
+                                        3.0 <span>(15 Reviews)</span>
+                                    </div>
+                                    <div className="RecommendDownDetDivRate2">
+                                        <AiFillHeart className="AiFillHeart"/>
+                                    </div>
+                                </div>
+                                <div className="RecommendDownDetDivBtnDiv">
+                                    <button>Add to Cart</button>
+                                </div>
                             </div>
                         </div>
-
-                        <div
-                            className="BestWeekItem1"
-                            onMouseEnter={handleShowCart}
-                            onMouseLeave={handleShowCart}
-                        >
-                            <div className="BestWeekItem1ImgDiv">
-                                <img src={macbook} alt="" />
-                                {showCart ? (
-                                    <>
-                                        <span>
-                                            <AiOutlineShoppingCart />
-                                        </span>
-                                    </>
-                                ) : null}
-                            </div>
-                            <div className="BestWeekItem1DetailDiv">
-                                <h3>MacBook Pro</h3>
-                                <p>
-                                    N500,000 <span>N590,000</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div
-                            className="BestWeekItem1"
-                            onMouseEnter={handleShowCart}
-                            onMouseLeave={handleShowCart}
-                        >
-                            <div className="BestWeekItem1ImgDiv">
-                                <img src={macbook} alt="" />
-                                {showCart ? (
-                                    <>
-                                        <span>
-                                            <AiOutlineShoppingCart />
-                                        </span>
-                                    </>
-                                ) : null}
-                            </div>
-                            <div className="BestWeekItem1DetailDiv">
-                                <h3>MacBook Pro</h3>
-                                <p>
-                                    N500,000 <span>N590,000</span>
-                                </p>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

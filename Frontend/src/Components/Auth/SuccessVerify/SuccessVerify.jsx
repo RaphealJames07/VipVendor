@@ -4,10 +4,10 @@ import "./SuccessVerify.css";
 const SuccessVerify = () => {
     return (
         <>
-            <div className="SuccessVerifyBody">
-                <div className="SuccessVerifyWrap">
-                    <div className="SuccessVerifyLogoDiv">
-                        <img src={Logo} alt="" />
+            <div className="w-full h-screen bg-[#f5f5f5] flex justify-center">
+                <div className="w-[90%] h-full">
+                    <div className="w-full h-[8%]">
+                        <img src={Logo} alt="" className="w-[8%] h-full object-contain"/>
                     </div>
                     <div className="SuccessVerifyContentDiv">
                         <div className="SuccessVerifyContentDivWrap">

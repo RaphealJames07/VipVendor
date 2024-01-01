@@ -323,7 +323,6 @@ const Cart = () => {
                                             type="text"
                                             placeholder="coupon code"
                                             className="h-9 w-28 rounded-lg text-sm px-2 border-y border-x outline-none"
-
                                         />
                                     </span>
                                 </p>
@@ -332,8 +331,12 @@ const Cart = () => {
                                 </p>
                             </div>
                             <div className="h-24 flex flex-col justify-around ">
-                                <p className="text-sm">Shipping fee to be included at checkout</p>
-                                <button className="w-68 h-10 bg-[#3F51B5] text-white rounded-md">Checkout</button>
+                                <p className="text-sm">
+                                    Shipping fee to be included at checkout
+                                </p>
+                                <button className="w-68 h-10 bg-[#3F51B5] text-white rounded-md">
+                                    Checkout
+                                </button>
                             </div>
                         </div>
                     </div>

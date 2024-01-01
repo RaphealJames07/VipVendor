@@ -83,8 +83,8 @@ const Login = () => {
     return (
         <>
             <div className="LoginContentDownWrap">
-                <div className="LoginContentDownInitials">
-                    <h1>Hello There</h1>
+                <div className="w-full flex flex-col justify-around h-[20%]">
+                    <h1 className="font-medium text-2xl">Hello There</h1>
                     <p>Log In to get started</p>
                 </div>
                 <div className="LoginContentDownForm">

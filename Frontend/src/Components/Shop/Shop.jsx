@@ -55,8 +55,8 @@ const Shop = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full flex flex-col justify-between items-center h-[40vh] py-5">
-                        <div className="w-[90%] h-[15%]">
+                    <div className="w-full flex flex-col justify-between items-center h-[10vh] py-5">
+                        <div className="w-[90%] h-[100%]">
                             <div className="w-full h-full flex items-center text-base pl-4">
                                 <BiArrowBack className="w-6 h-6 mr-2 cursor-pointer text-indigo-700" />
                                 <p className="mx-[10px]">
@@ -72,70 +72,6 @@ const Shop = () => {
                                         Phones
                                     </span>
                                 </p>
-                            </div>
-                        </div>
-                        <div className="w-[95%] h-[80%] bg-white flex">
-                            <div className="w-full h-full flex justify-between items-center">
-                                <div className="h-full rounded flex flex-col items-center justify-around w-[15%] shadow-sm py-4">
-                                    <img
-                                        className="w-[80%] h-[80%] bg-[#e1c3c3] rounded-md"
-                                        src=""
-                                        alt=""
-                                    />
-                                    <p className="w-full h-[20%] flex justify-center items-end">
-                                        Samsung
-                                    </p>
-                                </div>
-                                <div className="h-full rounded flex flex-col items-center justify-around w-[15%] shadow-sm py-4">
-                                    <img
-                                        className="w-[80%] h-[80%] bg-[#e1c3c3] rounded-md"
-                                        src=""
-                                        alt=""
-                                    />
-                                    <p className="w-full h-[20%] flex justify-center items-end">
-                                        Iphone
-                                    </p>
-                                </div>
-                                <div className="h-full rounded flex flex-col items-center justify-around w-[15%] shadow-sm py-4">
-                                    <img
-                                        className="w-[80%] h-[80%] bg-[#e1c3c3] rounded-md"
-                                        src=""
-                                        alt=""
-                                    />
-                                    <p className="w-full h-[20%] flex justify-center items-end">
-                                        Oppo
-                                    </p>
-                                </div>
-                                <div className="h-full rounded flex flex-col items-center justify-around w-[15%] shadow-sm py-4">
-                                    <img
-                                        className="w-[80%] h-[80%] bg-[#e1c3c3] rounded-md"
-                                        src=""
-                                        alt=""
-                                    />
-                                    <p className="w-full h-[20%] flex justify-center items-end">
-                                        Techno
-                                    </p>
-                                </div>
-                                <div className="h-full rounded flex flex-col items-center justify-around w-[15%] shadow-sm py-4">
-                                    <img
-                                        className="w-[80%] h-[80%] bg-[#e1c3c3] rounded-md"
-                                        src=""
-                                        alt=""
-                                    />
-                                    <p className="w-full h-[20%] flex justify-center items-end">
-                                        Google Pixel
-                                    </p>
-                                </div>
-                                <div className="h-full rounded flex flex-col items-center justify-around w-[15%] shadow-sm py-4">
-                                    <img
-                                        className="w-[80%] h-[80%] bg-[#e1c3c3] rounded-md"
-                                        src=""
-                                        alt=""
-                                    />
-                                    <p className="w-full h-[20%] flex justify-center items-end">
-                                        Huawei
-                                    </p>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,3 @@
-
 import {AiFillCaretDown, AiOutlineUnorderedList} from "react-icons/ai";
 import {BiSolidDashboard} from "react-icons/bi";
 import {BsFillBagCheckFill} from "react-icons/bs";
@@ -167,9 +166,19 @@ const AdminDashboard = () => {
                         </div>
                     </div>
                     <div className="w-full h-[89%] bg-grey-200">
-                      {
-                        adminHome? <AdminHome/> : adminOrder ? <AdminOrder/> : adminProducts ? <AdminProducts/> : adminUsers? <AdminUsers/> : adminReports ? <AdminReports/> : adminSettings? <AdminSettings/> : null 
-                      }
+                        {adminHome ? (
+                            <AdminHome />
+                        ) : adminOrder ? (
+                            <AdminOrder />
+                        ) : adminProducts ? (
+                            <AdminProducts />
+                        ) : adminUsers ? (
+                            <AdminUsers />
+                        ) : adminReports ? (
+                            <AdminReports />
+                        ) : adminSettings ? (
+                            <AdminSettings />
+                        ) : null}
                     </div>
                 </div>
             </div>

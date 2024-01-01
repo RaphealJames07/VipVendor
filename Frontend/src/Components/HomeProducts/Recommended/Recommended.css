@@ -11,12 +11,12 @@
 
 .RecommendBody{
   width: 100%;
-  height: 20%;
+  height: 65vh;
 }
 
 .RecommendTop{
   width: 100%;
-  height: 10%;
+  height: 15%;
   background: #dcf5f8;
   display: flex;
   align-items: center;

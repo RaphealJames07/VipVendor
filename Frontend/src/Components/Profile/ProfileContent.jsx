@@ -16,7 +16,7 @@ const ProfileContent = () => {
                         className="w-full h-full rounded-full"
                     />
                     <span className="absolute top-0 right-2 w-12 h-12 rounded-full flex items-center justify-center bg-pry cursor-pointer">
-                        <BiSolidPencil className="text-2xl text-white" />
+                        <BiSolidPencil className="text-2x   l text-white" />
                     </span>
                 </div>
                 <div className="w-full h-[20%] flex items-center justify-center text-3xl font-semibold">

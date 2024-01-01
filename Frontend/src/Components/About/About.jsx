@@ -109,100 +109,100 @@ const About = () => {
                         </div>
                     </div>
                     <div className="w-full h-[70vh] ">
-                    <div className="w-full h-[15%] bg-slate-100 flex items-center justify-center text-2xl font-bold">
-                        Our Services
-                    </div>
-                    <div className="w-full h-[85%] bg-slate-100 px-20 flex flex-col items-center">
-                        <div className="w-full h-[50%]  flex justify-between items-center">
-                            <div className="w-80 h-44 bg-gray-50 rounded p-4">
-                                <div className="w-full h-[20%] flex items-center gap-5 text-pry">
-                                    <MdDeliveryDining className="w-10 h-10" />
-                                    <h3 className="text-xl font-semibold">
-                                        Fast Delivery
-                                    </h3>
+                        <div className="w-full h-[15%] bg-slate-100 flex items-center justify-center text-2xl font-bold">
+                            Our Services
+                        </div>
+                        <div className="w-full h-[85%] bg-slate-100 px-20 flex flex-col items-center">
+                            <div className="w-full h-[50%]  flex justify-between items-center">
+                                <div className="w-80 h-44 bg-gray-50 rounded p-4">
+                                    <div className="w-full h-[20%] flex items-center gap-5 text-pry">
+                                        <MdDeliveryDining className="w-10 h-10" />
+                                        <h3 className="text-xl font-semibold">
+                                            Fast Delivery
+                                        </h3>
+                                    </div>
+                                    <div className="w-full h-[80%] flex items-center">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Illo veritatis porro
+                                        provident eum deleniti aut cum? Neque
+                                        doloremque at esse.
+                                    </div>
                                 </div>
-                                <div className="w-full h-[80%] flex items-center">
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Illo veritatis porro
-                                    provident eum deleniti aut cum? Neque
-                                    doloremque at esse.
+                                <div className="w-80 h-44 bg-gray-50 rounded p-4">
+                                    <div className="w-full h-[20%] flex items-center gap-5 text-pry">
+                                        <BsFillChatDotsFill className="w-8 h-8" />
+                                        <h3 className="text-xl font-semibold">
+                                            Chat Support
+                                        </h3>
+                                    </div>
+                                    <div className="w-full h-[80%] flex items-center">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Illo veritatis porro
+                                        provident eum deleniti aut cum? Neque
+                                        doloremque at esse.
+                                    </div>
+                                </div>
+                                <div className="w-80 h-44 bg-gray-50 rounded p-4">
+                                    <div className="w-full h-[20%] flex items-center gap-5 text-pry">
+                                        <BsFillCreditCard2BackFill className="w-8 h-8" />
+                                        <h3 className="text-xl font-semibold">
+                                            Easy Payment
+                                        </h3>
+                                    </div>
+                                    <div className="w-full h-[80%] flex items-center">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Illo veritatis porro
+                                        provident eum deleniti aut cum? Neque
+                                        doloremque at esse.
+                                    </div>
                                 </div>
                             </div>
-                            <div className="w-80 h-44 bg-gray-50 rounded p-4">
-                                <div className="w-full h-[20%] flex items-center gap-5 text-pry">
-                                    <BsFillChatDotsFill className="w-8 h-8" />
-                                    <h3 className="text-xl font-semibold">
-                                        Chat Support
-                                    </h3>
+                            <div className="w-full h-1/2  flex justify-between items-center">
+                                <div className="w-80 h-44 bg-gray-50 rounded p-4">
+                                    <div className="w-full h-[20%] flex items-center gap-5 text-pry">
+                                        <BsFillTagFill className="w-8 h-8" />
+                                        <h3 className="text-xl font-semibold">
+                                            Best Offer
+                                        </h3>
+                                    </div>
+                                    <div className="w-full h-[80%] flex items-center">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Illo veritatis porro
+                                        provident eum deleniti aut cum? Neque
+                                        doloremque at esse.
+                                    </div>
                                 </div>
-                                <div className="w-full h-[80%] flex items-center">
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Illo veritatis porro
-                                    provident eum deleniti aut cum? Neque
-                                    doloremque at esse.
+                                <div className="w-80 h-44 bg-gray-50 rounded p-4">
+                                    <div className="w-full h-[20%] flex items-center gap-5 text-pry">
+                                        <RiCustomerService2Fill className="w-8 h-8" />
+                                        <h3 className="text-xl font-semibold">
+                                            Customer Care
+                                        </h3>
+                                    </div>
+                                    <div className="w-full h-[80%] flex items-center">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Illo veritatis porro
+                                        provident eum deleniti aut cum? Neque
+                                        doloremque at esse.
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="w-80 h-44 bg-gray-50 rounded p-4">
-                                <div className="w-full h-[20%] flex items-center gap-5 text-pry">
-                                    <BsFillCreditCard2BackFill className="w-8 h-8" />
-                                    <h3 className="text-xl font-semibold">
-                                        Easy Payment
-                                    </h3>
-                                </div>
-                                <div className="w-full h-[80%] flex items-center">
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Illo veritatis porro
-                                    provident eum deleniti aut cum? Neque
-                                    doloremque at esse.
+                                <div className="w-80 h-44 bg-gray-50 rounded p-4 opacity-0">
+                                    <div className="w-full h-[20%] flex items-center gap-5 text-pry">
+                                        <RiCustomerService2Fill className="w-10 h-10" />
+                                        <h3 className="text-xl font-semibold">
+                                            Customer Care
+                                        </h3>
+                                    </div>
+                                    <div className="w-full h-[80%] flex items-center">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Illo veritatis porro
+                                        provident eum deleniti aut cum? Neque
+                                        doloremque at esse.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full h-1/2  flex justify-between items-center">
-                            <div className="w-80 h-44 bg-gray-50 rounded p-4">
-                                <div className="w-full h-[20%] flex items-center gap-5 text-pry">
-                                    <BsFillTagFill className="w-8 h-8" />
-                                    <h3 className="text-xl font-semibold">
-                                        Best Offer
-                                    </h3>
-                                </div>
-                                <div className="w-full h-[80%] flex items-center">
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Illo veritatis porro
-                                    provident eum deleniti aut cum? Neque
-                                    doloremque at esse.
-                                </div>
-                            </div>
-                            <div className="w-80 h-44 bg-gray-50 rounded p-4">
-                                <div className="w-full h-[20%] flex items-center gap-5 text-pry">
-                                    <RiCustomerService2Fill className="w-8 h-8" />
-                                    <h3 className="text-xl font-semibold">
-                                        Customer Care
-                                    </h3>
-                                </div>
-                                <div className="w-full h-[80%] flex items-center">
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Illo veritatis porro
-                                    provident eum deleniti aut cum? Neque
-                                    doloremque at esse.
-                                </div>
-                            </div>
-                            <div className="w-80 h-44 bg-gray-50 rounded p-4 opacity-0">
-                                <div className="w-full h-[20%] flex items-center gap-5 text-pry">
-                                    <RiCustomerService2Fill className="w-10 h-10" />
-                                    <h3 className="text-xl font-semibold">
-                                        Customer Care
-                                    </h3>
-                                </div>
-                                <div className="w-full h-[80%] flex items-center">
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Illo veritatis porro
-                                    provident eum deleniti aut cum? Neque
-                                    doloremque at esse.
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
                 </div>
                 <Footer />
             </div>
